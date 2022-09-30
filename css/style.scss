@@ -13,6 +13,24 @@
 	--cursor-size: 28px;
 	--cursor-color: #fff;
 }
+:root {
+	--navbar-color: #000000e0;
+	--primary-color: #000000;
+	--accent-color: rgb(18, 170, 225);
+	--accent-color2: rgb(12, 67, 87);
+	--text-color: rgb(249, 249, 249);
+	--shadow-color: rgb(3, 7, 40);
+}
+body {
+	background-color: var(--primary-color);
+	color: var(--text-color);
+}
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--accent-color);
+}
 #cursor {
 	position: fixed;
 	top: calc(var(--cursor-size) * -0.5);
