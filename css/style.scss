@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+:root {
+	--cursor-size: 28px;
+}
+@import './components/navbar';
+@import './components/preloader';
+@import './sections/home';
+@import './sections/work';
+@import './sections/skills';
+@import './sections/about';
+@import './sections/contact';
+@import './utils/animations';
+@import './utils/media';
