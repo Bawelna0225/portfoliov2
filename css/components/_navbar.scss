@@ -1,0 +1,198 @@
+header {
+	position: fixed;
+	width: 100vw;
+	height: 80px;
+	background-color: var(--navbar-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 20px;
+	z-index: 1;
+	.skip-nav {
+		position: absolute;
+		background-image: linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+		color: transparent;
+		background-clip: text;
+		border: 1px solid var(--accent-color);
+		transition: translate 200ms ease-in-out;
+		translate: 0% -200%;
+		padding: 10px;
+		&:focus {
+			translate: 0% 200%;
+		}
+	}
+	.logo {
+		font-size: 1.5rem;
+		background-image: linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+		color: transparent;
+		background-clip: text;
+	}
+	nav {
+		position: fixed;
+		right: 2rem;
+		top: 0;
+		bottom: auto;
+		height: 80px;
+		ul {
+			list-style-type: none;
+			height: 100%;
+			display: flex;
+			li {
+				height: 100%;
+				a {
+					padding-inline: 20px;
+					text-decoration: none;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column-reverse;
+					color: var(--text-color);
+					width: 100%;
+					height: 100%;
+					position: relative;
+					.icon {
+						display: none;
+					}
+					&::before {
+						content: '';
+						width: 100%;
+						scale: 0 0;
+						transform-origin: top center;
+						height: 2px;
+						background-color: var(--accent-color);
+						position: absolute;
+						top: 0px;
+						transition: all 0.5s;
+					}
+
+					&.themes-btn {
+						.icon {
+							display: block;
+							line,
+							rect {
+								stroke-width: 9;
+							}
+						}
+						.text {
+							display: none;
+						}
+						stroke: var(--accent-color);
+					}
+					&:hover {
+						outline: none;
+						color: var(--accent-color);
+						text-shadow: 0px 0px 10px var(--accent-color);
+						.icon svg path {
+							stroke: var(--accent-color);
+						}
+						&.themes-btn svg line,
+						rect {
+							stroke: var(--accent-color);
+						}
+					}
+					&:hover::before {
+						width: 100%;
+						scale: 1 1;
+						filter: drop-shadow(0px 10px 10px var(--accent-color));
+					}
+					&.themes-btn svg line,
+					rect {
+						stroke: var(--text-color);
+					}
+					&.themes-btn:after {
+						content: '';
+						width: 100%;
+						scale: 0 0;
+						transform-origin: bottom center;
+						height: 2px;
+						background-color: var(--accent-color);
+						position: absolute;
+						bottom: 0px;
+						transition: all 0.5s;
+					}
+					&.themes-btn:hover::after {
+						width: 100%;
+						scale: 1 1;
+						filter: drop-shadow(0px -10px 10px var(--accent-color));
+					}
+				}
+			}
+		}
+	}
+	.dropdown-content {
+		position: fixed;
+		top: 80px;
+		bottom: auto;
+		right: 2rem;
+		width: min(calc(100% - 1rem), 400px);
+		margin: 0 auto;
+		translate: 120% 0%;
+		background-color: var(--navbar-color);
+		// transition: 500ms cubic-bezier(0, 0, 0.54, 1.32);
+		transition: 500ms cubic-bezier(0.42, 0, 0.11, 1.32);
+		backdrop-filter: blur(3px);
+		z-index: 10;
+		&.open {
+			translate: 0% 0%;
+		}
+		::-webkit-scrollbar {
+			width: 6px;
+		}
+		::-webkit-scrollbar-thumb {
+			background: var(--accent-color);
+			box-shadow: 0px 0px 10px var(--accent-color);
+		}
+		p {
+			font-size: 1.3rem;
+			// backdrop-filter: blur(8px);
+			padding: 10px;
+			padding-block: 20px;
+			span {
+				color: var(--accent-color);
+				font-weight: 900;
+			}
+		}
+		.dropdown-items {
+			padding: 10px;
+			position: relative;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+			height: 450px;
+			overflow-y: auto;
+			overscroll-behavior-y: contain;
+			.dropdown-item {
+				display: flex;
+				width: 100%;
+				padding: 10px;
+				background-color: var(--navbar-color);
+				background-image: linear-gradient(
+					45deg,
+					var(--primary-color) 0%,
+					var(--primary-color) 33%,
+					var(--accent-color) 33%,
+					var(--accent-color) 66%,
+					var(--accent-color2) 66%,
+					var(--accent-color2) 100%
+				);
+				height: 200px;
+				position: relative;
+				transition: 100ms linear;
+				&:hover {
+					// border: 1px solid var(--accent-color);
+					box-shadow: 0px 0px 10px var(--accent-color);
+					scale: 1.02;
+				}
+				.theme-description {
+					position: absolute;
+					backdrop-filter: blur(3px);
+					padding: 10px;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					background-color: var(--navbar-color);
+				}
+			}
+		}
+	}
+}
