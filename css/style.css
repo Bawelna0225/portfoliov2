@@ -315,6 +315,169 @@ header .dropdown-content .dropdown-items .dropdown-item .theme-description {
   opacity: 0;
 }
 
+.home {
+  width: min(100vw - 2rem, 1500px);
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 0px;
+  justify-content: center;
+  gap: 35px;
+  overflow: hidden;
+}
+.home.active h1 {
+  transition: opacity 300ms linear, translate 300ms linear;
+  opacity: 1;
+  translate: 0% 0%;
+}
+.home.active h2 {
+  transition: opacity 300ms linear, translate 300ms linear;
+  transition-delay: 300ms;
+  opacity: 1;
+  translate: 0% 0%;
+}
+.home.active .social a:nth-of-type(1) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 750ms;
+}
+.home.active .social a:nth-of-type(2) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 900ms;
+}
+.home.active .social a:nth-of-type(3) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 1050ms;
+}
+.home.active .social a:nth-of-type(4) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 1200ms;
+}
+.home.active .social a:nth-of-type(5) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 1350ms;
+}
+.home.active .social a:nth-of-type(6) {
+  opacity: 1;
+  translate: 0% 0%;
+  transition-delay: 1500ms;
+}
+.home.active .buttons {
+  transition: 300ms linear;
+  opacity: 1;
+  transition-delay: 1800ms !important;
+  translate: 0% 0%;
+}
+.home .bg-text {
+  position: absolute;
+  font-size: clamp(10rem, 25vw, 25rem);
+  rotate: -45deg;
+  color: var(--accent-color);
+  z-index: -1;
+  opacity: 0.05;
+  top: 200px;
+  left: 50px;
+  overflow: hidden;
+}
+.home::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  position: absolute;
+  right: 0;
+  bottom: 0 !important;
+  -webkit-clip-path: polygon(100% 40%, 50% 100%, 100% 100%);
+          clip-path: polygon(100% 40%, 50% 100%, 100% 100%);
+  z-index: -1;
+  background-image: repeating-linear-gradient(135deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.home h1 {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-weight: 400;
+  opacity: 0;
+  translate: 0% -20%;
+}
+.home h2 {
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  font-weight: 300;
+  opacity: 0;
+  translate: 0% -20%;
+}
+.home h2 span {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+.home p {
+  font-size: clamp(1rem, 1vw, 1.2rem);
+}
+.home .social {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: clamp(12px, 3vw, 22px);
+}
+.home .social a {
+  opacity: 0;
+  translate: -40% 0%;
+  transition: opacity 300ms ease-in-out, translate 300ms ease-in-out;
+  text-decoration: none;
+}
+.home .social a svg {
+  width: clamp(30px, 3vw, 40px);
+  fill: var(--text-color);
+  transition: 200ms ease-in-out;
+}
+.home .social a:hover svg {
+  fill: var(--accent-color);
+  translate: 0% -10%;
+  scale: 1.1;
+  rotate: 10deg;
+}
+.home .buttons {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  translate: 0% -20%;
+}
+.home .buttons button {
+  color: var(--text-color);
+  padding: 8px 12px;
+  border: none;
+  background-color: var(--primary-color) !important;
+  border-radius: 4px;
+  position: relative;
+  font-size: 1rem;
+  background-clip: padding-box;
+  border: solid 2px transparent;
+  cursor: pointer;
+  transition: box-shadow 200ms linear;
+}
+.home .buttons button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  margin: -2px;
+  background-color: red;
+  z-index: -50;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+}
+.home .buttons button:hover {
+  box-shadow: 0px 0px 5px var(--accent-color);
+}
+.home .buttons button:hover::before {
+  background: linear-gradient(185deg, var(--accent-color), var(--accent-color2));
+}
+
 @-webkit-keyframes rotate-left {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
