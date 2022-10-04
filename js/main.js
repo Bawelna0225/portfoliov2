@@ -35,7 +35,18 @@ const themesBox = document.querySelector('#dropdown')
 themesBtn.addEventListener('click', (e) => {
 	themesBox.classList.toggle('open')
 })
-
+window.addEventListener('click', (e) => {
+	if (!document.getElementById('dropdown').contains(e.target) && !document.querySelector('.themes-btn').contains(e.target)) {
+		// if user clicks outside theme-box content close theme-box
+		document.getElementById('dropdown').classList.remove('open')
+	}
+})
+window.addEventListener('keydown', (e) => {
+	if (document.getElementById('dropdown').classList.contains('open') && e.key === 'Escape') {
+		// if user clicks on esc while themes-box is open, close theme-box
+		document.getElementById('dropdown').classList.remove('open')
+	}
+})
 // Theme switcher
 const root = document.documentElement
 
