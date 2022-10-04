@@ -14,9 +14,11 @@ const funFacts = [
 	`<span>Did You Know?</span><br> About 51% of internet traffic is non-human. Over 30% is from hacking programs, spammers, and phishing.`,
 	`<span>Did You Know?</span><br> The first computer virus was harmless.`,
 ]
+// Displaying random fun fact
 const loadingFunFacts = funFacts[Math.floor(Math.random() * funFacts.length)]
 loadingFunFactContainer.innerHTML = loadingFunFacts
 
+// Removing Preloader and animating home section in
 window.addEventListener('load', () => {
 	setTimeout(() => {
 		document.querySelector('.preloader').classList.add('loaded')
@@ -26,6 +28,7 @@ window.addEventListener('load', () => {
 	}, 3000)
 })
 
+// Opening themes box
 const themesBtn = document.querySelector('.themes-btn')
 const themesBox = document.querySelector('#dropdown')
 
