@@ -35,18 +35,22 @@ const themesBox = document.querySelector('#dropdown')
 themesBtn.addEventListener('click', (e) => {
 	themesBox.classList.toggle('open')
 })
+
 // Theme switcher
 const root = document.documentElement
 
 const themesContainer = document.querySelector('.dropdown-items')
 
 const createTheme = (id, name) => {
-	const dropdownItem = document.createElement('div')
+	const dropdownItem = document.createElement('button')
 	dropdownItem.classList.add('dropdown-item')
+
 	const themeDescription = document.createElement('div')
 	themeDescription.classList.add('theme-description')
 	themeDescription.innerHTML = `Theme: <br/> ${name}`
+
 	dropdownItem.appendChild(themeDescription)
+
 	dropdownItem.addEventListener('click', () => {
 		changeTheme(id)
 	})
@@ -60,7 +64,7 @@ fetch('../js/themes.json')
 			const {
 				name,
 				id,
-				colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
+				colors: { primaryColor, firstAccentColor, secondAccentColor },
 			} = element
 			const theme = createTheme(id, name)
 			theme.style.backgroundImage = `linear-gradient(45deg, ${primaryColor} 0%, ${primaryColor} 33%, ${firstAccentColor} 33%, ${firstAccentColor} 66%, ${secondAccentColor} 66%, ${secondAccentColor} 100%)`
