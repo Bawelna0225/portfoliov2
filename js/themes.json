@@ -1,14 +1,242 @@
 [
 	{
-		"name": "",
-		"id": "",
+		"name": "Blue Dark",
+		"id": "blue-dark",
 		"colors": {
-			"navbarColor": "",
-			"primaryColor": "",
-			"textColor": "",
-			"shadowColor": "",
-			"firstAccentColor": "",
-			"secondAccentColor": ""
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#12aae1",
+			"secondAccentColor": "#0c4357"
+		}
+	},
+	{
+		"name": "Blue Light",
+		"id": "blue-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#12aae1",
+			"secondAccentColor": "#0c4357"
+		}
+	},
+	{
+		"name": "Orange Dark",
+		"id": "orange-dark",
+		"colors": {
+			"navbarColor": "#040510e0",
+			"primaryColor": "#040510",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#e16f12",
+			"secondAccentColor": "#914d0d"
+		}
+	},
+	{
+		"name": "Orange Light",
+		"id": "orange-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#e16f12",
+			"secondAccentColor": "#914d0d"
+		}
+	},
+	{
+		"name": "Green Dark",
+		"id": "green-dark",
+		"colors": {
+			"navbarColor": "#040510e0",
+			"primaryColor": "#040510",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#5ae112",
+			"secondAccentColor": "#0e7227"
+		}
+	},
+	{
+		"name": "Green Light",
+		"id": "green-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#5ae112",
+			"secondAccentColor": "#0e7227"
+		}
+	},
+	{
+		"name": "Red Dark",
+		"id": "red-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#e11212",
+			"secondAccentColor": "#720e0e"
+		}
+	},
+	{
+		"name": "Red Light",
+		"id": "red-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#e11212",
+			"secondAccentColor": "#720e0e"
+		}
+	},
+	{
+		"name": "Purple Dark",
+		"id": "purple-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#b112e1",
+			"secondAccentColor": "#4b0948"
+		}
+	},
+	{
+		"name": "Purple Light",
+		"id": "purple-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#b112e1",
+			"secondAccentColor": "#4b0948"
+		}
+	},
+	{
+		"name": "Silver Dark",
+		"id": "silver-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#b7b5b5",
+			"secondAccentColor": "#434141"
+		}
+	},
+	{
+		"name": "Silver Light",
+		"id": "silver-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#b7b5b5",
+			"secondAccentColor": "#434141"
+		}
+	},
+	{
+		"name": "Gold Dark",
+		"id": "gold-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#edcb09",
+			"secondAccentColor": "#956609"
+		}
+	},
+	{
+		"name": "Gold Light",
+		"id": "gold-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#edcb09",
+			"secondAccentColor": "#956609"
+		}
+	},
+	{
+		"name": "Neon Dark",
+		"id": "neon-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#11a9af",
+			"secondAccentColor": "#950985"
+		}
+	},
+	{
+		"name": "Neon Light",
+		"id": "neon-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#11a9af",
+			"secondAccentColor": "#950985"
+		}
+	},
+	{
+		"name": "Brown Dark",
+		"id": "brown-dark",
+		"colors": {
+			"navbarColor": "#000000e0",
+			"primaryColor": "#000000",
+			"textColor": "#f9f9f9",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#994f1d",
+			"secondAccentColor": "#72390e"
+		}
+	},
+	{
+		"name": "Brown Light",
+		"id": "brown-light",
+		"colors": {
+			"navbarColor": "#ffffffe0",
+			"primaryColor": "#ffffff",
+			"textColor": "#000000",
+			"shadowColor": "#030728",
+			"firstAccentColor": "#994f1d",
+			"secondAccentColor": "#72390e"
+		}
+	},
+	{
+		"name": "Coffee",
+		"id": "coffee",
+		"colors": {
+			"navbarColor": "#da944af0",
+			"primaryColor": "#ddd4d0",
+			"textColor": "#3d3d3d",
+			"shadowColor": "#280d03",
+			"firstAccentColor": "#944c16",
+			"secondAccentColor": "#431b0d"
+		}
+	},
+	{
+		"name": "Horror",
+		"id": "horror",
+		"colors": {
+			"navbarColor": "#320808e2",
+			"primaryColor": "#1C0909",
+			"textColor": "#989696",
+			"shadowColor": "#280303",
+			"firstAccentColor": "#e12712",
+			"secondAccentColor": "#57160c"
 		}
 	}
 ]

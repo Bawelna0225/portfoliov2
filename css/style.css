@@ -16,10 +16,10 @@
 :root {
   --navbar-color: #000000e0;
   --primary-color: #000000;
-  --accent-color: rgb(18, 170, 225);
-  --accent-color2: rgb(12, 67, 87);
-  --text-color: rgb(249, 249, 249);
-  --shadow-color: rgb(3, 7, 40);
+  --accent-color: #12aae1;
+  --accent-color2: #0c4357;
+  --text-color: #f9f9f9;
+  --shadow-color: #030728;
 }
 
 body {
@@ -227,7 +227,6 @@ header .dropdown-content .dropdown-items .dropdown-item {
   width: 100%;
   padding: 10px;
   background-color: var(--navbar-color);
-  background-image: linear-gradient(45deg, var(--primary-color) 0%, var(--primary-color) 33%, var(--accent-color) 33%, var(--accent-color) 66%, var(--accent-color2) 66%, var(--accent-color2) 100%);
   height: 200px;
   position: relative;
   transition: 100ms linear;

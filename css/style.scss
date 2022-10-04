@@ -16,11 +16,13 @@
 :root {
 	--navbar-color: #000000e0;
 	--primary-color: #000000;
-	--accent-color: rgb(18, 170, 225);
-	--accent-color2: rgb(12, 67, 87);
-	--text-color: rgb(249, 249, 249);
-	--shadow-color: rgb(3, 7, 40);
+	--accent-color: #12aae1;
+	--accent-color2: #0c4357;
+	--text-color: #f9f9f9;
+	--shadow-color: #030728;
 }
+
+
 body {
 	background-color: var(--primary-color);
 	color: var(--text-color);

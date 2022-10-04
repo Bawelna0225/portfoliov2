@@ -35,3 +35,56 @@ const themesBox = document.querySelector('#dropdown')
 themesBtn.addEventListener('click', (e) => {
 	themesBox.classList.toggle('open')
 })
+// Theme switcher
+const root = document.documentElement
+
+const themesContainer = document.querySelector('.dropdown-items')
+
+const createTheme = (id, name) => {
+	const dropdownItem = document.createElement('div')
+	dropdownItem.classList.add('dropdown-item')
+	const themeDescription = document.createElement('div')
+	themeDescription.classList.add('theme-description')
+	themeDescription.innerHTML = `Theme: <br/> ${name}`
+	dropdownItem.appendChild(themeDescription)
+	dropdownItem.addEventListener('click', () => {
+		changeTheme(id)
+	})
+	return dropdownItem
+}
+
+fetch('../js/themes.json')
+	.then((response) => response.json())
+	.then((data) => {
+		data.forEach((element) => {
+			const {
+				name,
+				id,
+				colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
+			} = element
+			const theme = createTheme(id, name)
+			theme.style.backgroundImage = `linear-gradient(45deg, ${primaryColor} 0%, ${primaryColor} 33%, ${firstAccentColor} 33%, ${firstAccentColor} 66%, ${secondAccentColor} 66%, ${secondAccentColor} 100%)`
+			themesContainer.appendChild(theme)
+		})
+	})
+const changeTheme = (theme) => {
+	fetch('../js/themes.json')
+		.then((response) => response.json())
+		.then((data) => {
+			data.filter((data) => {
+				const {
+					id,
+					colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
+				} = data
+				if (id === theme) {
+					root.style.setProperty('--navbar-color', navbarColor)
+					root.style.setProperty('--primary-color', primaryColor)
+					root.style.setProperty('--text-color', textColor)
+					root.style.setProperty('--shadow-color', shadowColor)
+					root.style.setProperty('--accent-color', firstAccentColor)
+					root.style.setProperty('--accent-color2', secondAccentColor)
+				}
+			})
+		})
+		.catch((error) => console.log(`%cERROR! ${error}`, 'color: red; font-size: 18px'))
+}
