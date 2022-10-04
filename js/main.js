@@ -48,7 +48,6 @@ window.addEventListener('keydown', (e) => {
 	}
 })
 // Theme switcher
-const root = document.documentElement
 
 const themesContainer = document.querySelector('.dropdown-items')
 
@@ -98,6 +97,13 @@ const changeTheme = (theme) => {
 					root.style.setProperty('--shadow-color', shadowColor)
 					root.style.setProperty('--accent-color', firstAccentColor)
 					root.style.setProperty('--accent-color2', secondAccentColor)
+
+					localStorage.setItem('currentTheme-navbarColor', navbarColor)
+					localStorage.setItem('currentTheme-primaryColor', primaryColor)
+					localStorage.setItem('currentTheme-textColor', textColor)
+					localStorage.setItem('currentTheme-shadowColor', shadowColor)
+					localStorage.setItem('currentTheme-firstAccentColor', firstAccentColor)
+					localStorage.setItem('currentTheme-secondAccentColor', secondAccentColor)
 				}
 			})
 		})
