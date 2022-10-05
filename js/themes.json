@@ -171,7 +171,7 @@
 		"name": "Neon Dark",
 		"id": "neon-dark",
 		"colors": {
-			"navbarColor": "#000000e0",
+			"navbarColor": "#10040455",
 			"primaryColor": "#000000",
 			"textColor": "#f9f9f9",
 			"shadowColor": "#030728",
@@ -183,7 +183,7 @@
 		"name": "Neon Light",
 		"id": "neon-light",
 		"colors": {
-			"navbarColor": "#ffffffe0",
+			"navbarColor": "#ffffff66",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
 			"shadowColor": "#030728",
