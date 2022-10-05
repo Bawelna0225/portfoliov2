@@ -134,6 +134,9 @@ header {
 		z-index: 10;
 		&.open {
 			translate: 0% 0%;
+			.dropdown-items .dropdown-item {
+				visibility: visible;
+			}
 		}
 		::-webkit-scrollbar {
 			width: 6px;
@@ -162,6 +165,7 @@ header {
 			overflow-y: auto;
 			overscroll-behavior-y: contain;
 			.dropdown-item {
+				visibility: hidden;
 				border: none;
 				display: flex;
 				text-align: left;

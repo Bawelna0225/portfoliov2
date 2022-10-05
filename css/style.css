@@ -187,6 +187,9 @@ header .dropdown-content {
 header .dropdown-content.open {
   translate: 0% 0%;
 }
+header .dropdown-content.open .dropdown-items .dropdown-item {
+  visibility: visible;
+}
 header .dropdown-content ::-webkit-scrollbar {
   width: 6px;
 }
@@ -214,6 +217,7 @@ header .dropdown-content .dropdown-items {
   overscroll-behavior-y: contain;
 }
 header .dropdown-content .dropdown-items .dropdown-item {
+  visibility: hidden;
   border: none;
   display: flex;
   text-align: left;
