@@ -34,6 +34,12 @@ const themesBox = document.querySelector('#dropdown')
 
 themesBtn.addEventListener('click', (e) => {
 	themesBox.classList.toggle('open')
+	const allThemes = [...document.querySelectorAll('.dropdown-item')]
+	allThemes.filter((theme) => {
+		if (theme.dataset.themeId === localStorage.getItem('currentTheme-id')) {
+			theme.classList.add('active')
+		}
+	})
 })
 window.addEventListener('click', (e) => {
 	if (!document.getElementById('dropdown').contains(e.target) && !document.querySelector('.themes-btn').contains(e.target)) {
@@ -54,6 +60,7 @@ const themesContainer = document.querySelector('.dropdown-items')
 const createTheme = (id, name) => {
 	const dropdownItem = document.createElement('button')
 	dropdownItem.classList.add('dropdown-item')
+	dropdownItem.setAttribute('data-theme-id', id)
 
 	const themeDescription = document.createElement('div')
 	themeDescription.classList.add('theme-description')
@@ -61,8 +68,8 @@ const createTheme = (id, name) => {
 
 	dropdownItem.appendChild(themeDescription)
 
-	dropdownItem.addEventListener('click', () => {
-		changeTheme(id)
+	dropdownItem.addEventListener('click', (e) => {
+		changeTheme(id, e)
 	})
 	return dropdownItem
 }
@@ -81,7 +88,11 @@ fetch('../js/themes.json')
 			themesContainer.appendChild(theme)
 		})
 	})
-const changeTheme = (theme) => {
+const changeTheme = (theme, e) => {
+	;[...document.querySelectorAll('.dropdown-item')].filter((theme) => {
+		theme.classList.remove('active')
+	})
+	e.target.classList.add('active')
 	fetch('../js/themes.json')
 		.then((response) => response.json())
 		.then((data) => {
@@ -98,6 +109,7 @@ const changeTheme = (theme) => {
 					root.style.setProperty('--accent-color', firstAccentColor)
 					root.style.setProperty('--accent-color2', secondAccentColor)
 
+					localStorage.setItem('currentTheme-id', id)
 					localStorage.setItem('currentTheme-navbarColor', navbarColor)
 					localStorage.setItem('currentTheme-primaryColor', primaryColor)
 					localStorage.setItem('currentTheme-textColor', textColor)
