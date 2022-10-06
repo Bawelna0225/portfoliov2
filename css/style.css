@@ -50,6 +50,24 @@ section {
   transform-origin: center center;
 }
 
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: -50px;
+  top: auto;
+  translate: -50% 0%;
+  background-image: repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px var(--shadow-color);
+  transition: 300ms ease-in-out;
+}
+.snackbar.active {
+  bottom: 80px;
+  top: auto;
+}
+
 header {
   position: fixed;
   width: 100vw;
@@ -182,16 +200,19 @@ header .dropdown-content {
   margin: 0 auto;
   translate: 120% 0%;
   background-color: var(--navbar-color);
-  transition: 500ms cubic-bezier(0.42, 0, 0.11, 1.32);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   z-index: 10;
+  transition: translate 300ms linear;
 }
 header .dropdown-content.open {
+  transition: translate 700ms cubic-bezier(0.42, 0, 0.11, 1.32);
   translate: 0% 0%;
 }
 header .dropdown-content.open .dropdown-items .dropdown-item {
   visibility: visible;
+  opacity: 1;
+  transition: 300ms linear;
 }
 header .dropdown-content ::-webkit-scrollbar {
   width: 6px;
@@ -222,6 +243,7 @@ header .dropdown-content .dropdown-items {
 header .dropdown-content .dropdown-items .dropdown-item {
   overflow: hidden;
   visibility: hidden;
+  opacity: 0;
   border: none;
   display: flex;
   text-align: left;
@@ -246,6 +268,7 @@ header .dropdown-content .dropdown-items .dropdown-item .theme-description {
   bottom: 0;
   width: 100%;
   background-color: var(--navbar-color);
+  pointer-events: none;
 }
 header .dropdown-content .dropdown-items .dropdown-item.active::before {
   content: "Active";
@@ -615,6 +638,17 @@ header .dropdown-content .dropdown-items .dropdown-item.active::before {
   }
   #cursor {
     display: none;
+  }
+  .snackbar {
+    bottom: auto;
+    top: -100px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .snackbar.active {
+    top: 60px;
+    bottom: auto;
   }
   header {
     height: 60px;

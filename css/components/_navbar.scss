@@ -129,13 +129,16 @@ header {
 		translate: 120% 0%;
 		background-color: var(--navbar-color);
 		// transition: 500ms cubic-bezier(0, 0, 0.54, 1.32);
-		transition: 500ms cubic-bezier(0.42, 0, 0.11, 1.32);
 		backdrop-filter: blur(3px);
 		z-index: 10;
+		transition: translate 300ms linear;
 		&.open {
+			transition: translate 700ms cubic-bezier(0.42, 0, 0.11, 1.32);
 			translate: 0% 0%;
 			.dropdown-items .dropdown-item {
 				visibility: visible;
+				opacity: 1;
+				transition: 300ms linear;
 			}
 		}
 		::-webkit-scrollbar {
@@ -167,6 +170,7 @@ header {
 			.dropdown-item {
 				overflow: hidden;
 				visibility: hidden;
+				opacity: 0;
 				border: none;
 				display: flex;
 				text-align: left;
@@ -190,6 +194,7 @@ header {
 					bottom: 0;
 					width: 100%;
 					background-color: var(--navbar-color);
+					pointer-events: none;
 				}
 				&.active::before {
 					content: 'Active';

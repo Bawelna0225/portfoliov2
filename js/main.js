@@ -88,16 +88,19 @@ fetch('../js/themes.json')
 			themesContainer.appendChild(theme)
 		})
 	})
+
+const snackBar = document.querySelector('.snackbar')
+let snackBarInterval
 const changeTheme = (theme, e) => {
 	;[...document.querySelectorAll('.dropdown-item')].filter((theme) => {
 		theme.classList.remove('active')
 	})
-	e.target.classList.add('active')
 	fetch('../js/themes.json')
 		.then((response) => response.json())
 		.then((data) => {
 			data.filter((data) => {
 				const {
+					name,
 					id,
 					colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
 				} = data
@@ -116,7 +119,15 @@ const changeTheme = (theme, e) => {
 					localStorage.setItem('currentTheme-shadowColor', shadowColor)
 					localStorage.setItem('currentTheme-firstAccentColor', firstAccentColor)
 					localStorage.setItem('currentTheme-secondAccentColor', secondAccentColor)
+
+					clearInterval(snackBarInterval)
+					snackBar.querySelector('span').textContent = `${name}`
+					snackBar.classList.add('active')
+					snackBarInterval = setInterval(() => {
+						snackBar.classList.remove('active')
+					}, 3000)
 				}
+				e.target.classList.add('active')
 			})
 		})
 		.catch((error) => console.log(`%cERROR! ${error}`, 'color: red; font-size: 18px'))

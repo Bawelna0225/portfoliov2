@@ -36,6 +36,15 @@
 	#cursor {
 		display: none;
 	}
+	.snackbar {
+		bottom: auto;
+		top: -100px;
+		width: max-content;
+		&.active {
+			top: 60px;
+			bottom: auto;
+		}
+	}
 	header {
 		height: 60px;
 		background-color: transparent;
