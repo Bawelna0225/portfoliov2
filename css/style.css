@@ -50,6 +50,30 @@ section {
   transform-origin: center center;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: -80px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  padding: 5px;
+  background-color: var(--navbar-color);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  transition: 200ms linear;
+  box-shadow: 0px 0px 1px var(--accent-color);
+}
+.back-to-top:hover {
+  -webkit-animation: jump 0.5s ease-in-out infinite both;
+          animation: jump 0.5s ease-in-out infinite both;
+}
+.back-to-top.active {
+  bottom: 1rem;
+}
+
 .snackbar {
   position: fixed;
   left: 50%;
@@ -602,6 +626,34 @@ header .dropdown-content .dropdown-items .dropdown-item.active::before {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+@-webkit-keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --navbar-color: #000000e0;
@@ -649,6 +701,17 @@ header .dropdown-content .dropdown-items .dropdown-item.active::before {
   .snackbar.active {
     top: 60px;
     bottom: auto;
+  }
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+  .back-to-top svg {
+    width: 35px;
+  }
+  .back-to-top.active {
+    right: 0.5rem;
+    bottom: calc(60px + 0.5rem);
   }
   header {
     height: 60px;

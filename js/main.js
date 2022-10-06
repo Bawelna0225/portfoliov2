@@ -27,7 +27,19 @@ window.addEventListener('load', () => {
 		}, 800)
 	}, 3000)
 })
-
+// Showing back to to button
+const backToTop = document.querySelector('.back-to-top')
+backToTop.addEventListener('click', () => {
+	document.body.scrollTop = 0
+	document.documentElement.scrollTop = 0
+})
+window.addEventListener('scroll', () => {
+	if (scrollY > 300) {
+		backToTop.classList.add('active')
+	} else {
+		backToTop.classList.remove('active')
+	}
+})
 // Opening themes box
 const themesBtn = document.querySelector('.themes-btn')
 const themesBox = document.querySelector('#dropdown')

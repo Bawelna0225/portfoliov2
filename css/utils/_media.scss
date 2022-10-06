@@ -45,6 +45,17 @@
 			bottom: auto;
 		}
 	}
+	.back-to-top {
+		width: 40px;
+		height: 40px;
+		svg {
+			width: 35px;
+		}
+		&.active {
+			right: 0.5rem;
+			bottom: calc(60px + 0.5rem);
+		}
+	}
 	header {
 		height: 60px;
 		background-color: transparent;
