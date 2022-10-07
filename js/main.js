@@ -53,7 +53,14 @@ themesBtn.addEventListener('click', (e) => {
 		}
 	})
 })
+// Side menu icon
+const toggleSideMenuBtn = document.querySelector('.wrapper-menu'),
+	sideMenu = document.querySelector('.side-menu')
 
+toggleSideMenuBtn.addEventListener('click', () => {
+	toggleSideMenuBtn.classList.toggle('open')
+	sideMenu.classList.toggle('open')
+})
 window.addEventListener('click', (e) => {
 	if (!document.getElementById('dropdown').contains(e.target) && !document.querySelector('.themes-btn').contains(e.target)) {
 		// if user clicks outside theme-box content close theme-box

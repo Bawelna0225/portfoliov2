@@ -274,6 +274,7 @@ header {
 		background-color: var(--navbar-color);
 		backdrop-filter: blur(8px);
 		translate: 100% 0%;
+		transition: 500ms cubic-bezier(0, 0, 0.37, 1.69);
 		ul {
 			list-style-type: none;
 			display: flex;
