@@ -373,7 +373,7 @@ header .side-menu ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   padding: 20px;
 }
 header .side-menu ul li {
@@ -385,6 +385,25 @@ header .side-menu ul li a {
   text-decoration: none;
   color: var(--text-color);
   font-size: 1.3rem;
+  position: relative;
+}
+header .side-menu ul li a::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  background-color: var(--accent-color);
+  left: -15px;
+  scale: 100% 0%;
+  transform-origin: bottom;
+  transition: box-shadow 100ms 250ms linear, scale 250ms ease-in-out;
+}
+header .side-menu ul li a:hover {
+  color: var(--accent-color);
+}
+header .side-menu ul li a:hover::before {
+  scale: 100% 100%;
+  box-shadow: 5px 0px 10px var(--accent-color);
 }
 header .side-menu.open {
   translate: 0% 0%;

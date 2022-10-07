@@ -233,7 +233,6 @@ header {
 				position: relative;
 				transition: 100ms linear;
 				&:hover {
-					// border: 1px solid var(--accent-color);
 					box-shadow: 0px 0px 10px var(--accent-color);
 					scale: 1.02;
 				}
@@ -280,7 +279,7 @@ header {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			gap: 10px;
+			gap: 15px;
 			padding: 20px;
 			li {
 				translate: 50% 0%;
@@ -290,6 +289,25 @@ header {
 					text-decoration: none;
 					color: var(--text-color);
 					font-size: 1.3rem;
+					position: relative;
+					&::before {
+						content: '';
+						width: 2px;
+						height: 100%;
+						position: absolute;
+						background-color: var(--accent-color);
+						left: -15px;
+						scale: 100% 0%;
+						transform-origin: bottom;
+						transition: box-shadow 100ms 250ms linear, scale 250ms ease-in-out;
+					}
+					&:hover {
+						color: var(--accent-color);
+						&::before {
+							scale: 100% 100%;
+							box-shadow: 5px 0px 10px var(--accent-color);
+						}
+					}
 				}
 			}
 		}
