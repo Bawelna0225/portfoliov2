@@ -53,6 +53,7 @@ themesBtn.addEventListener('click', (e) => {
 		}
 	})
 })
+
 window.addEventListener('click', (e) => {
 	if (!document.getElementById('dropdown').contains(e.target) && !document.querySelector('.themes-btn').contains(e.target)) {
 		// if user clicks outside theme-box content close theme-box

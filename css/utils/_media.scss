@@ -23,6 +23,20 @@
 		backdrop-filter: blur(8px);
 	}
 }
+@media (max-width: 1024px) {
+	nav ul li {
+		display: none;
+		&:last-of-type {
+			display: flex;
+		}
+	}
+	.wrapper-menu {
+		display: flex !important;
+	}
+	.side-menu {
+		display: block !important;
+	}
+}
 @media (max-width: 450px) {
 	* {
 		cursor: auto;
@@ -79,7 +93,12 @@
 			right: 0;
 			padding-inline: 0.5rem;
 			overflow: visible;
-
+			ul li {
+				display: flex;
+			}
+			.wrapper-menu {
+				display: none;
+			}
 			ul li a {
 				width: calc(calc(100vw - 1rem) / 6);
 				padding: 0;
@@ -122,6 +141,9 @@
 			&.open {
 				bottom: 65px;
 			}
+		}
+		.side-menu {
+			display: none !important;
 		}
 	}
 	.home {
