@@ -282,7 +282,10 @@ header {
 			justify-content: center;
 			gap: 10px;
 			padding: 20px;
-			li{
+			li {
+				translate: 50% 0%;
+				opacity: 0;
+				transition: 100ms linear;
 				a {
 					text-decoration: none;
 					color: var(--text-color);
@@ -292,6 +295,16 @@ header {
 		}
 		&.open {
 			translate: 0% 0%;
+			li {
+				translate: 0% 0%;
+				transition: 300ms ease-in-out;
+				opacity: 1;
+				@for $i from 1 through 5 {
+					&:nth-of-type(#{$i}) {
+						transition-delay: $i * 100ms + 500ms;
+					}
+				}
+			}
 		}
 	}
 }
