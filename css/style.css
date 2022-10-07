@@ -794,7 +794,7 @@ header .side-menu.open li:nth-of-type(5) {
     --shadow-color: #030728;
   }
 }
-@media (min-width: 450px) {
+@media (min-width: 451px) {
   header {
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
