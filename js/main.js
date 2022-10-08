@@ -77,7 +77,7 @@ window.addEventListener('keydown', (e) => {
 		// if user clicks on esc while themes-box is open, close theme-box
 		document.getElementById('dropdown').classList.remove('open')
 	}
-	if (!toggleSideMenuBtn.contains(e.target) && !sideMenu.contains(e.target)) {
+	if (sideMenu.classList.contains('open') && e.key === 'Escape') {
 		// if user clicks outside theme-box content close theme-box
 		sideMenu.classList.remove('open')
 		toggleSideMenuBtn.classList.remove('open')

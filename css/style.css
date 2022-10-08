@@ -143,10 +143,15 @@ header nav .wrapper-menu {
   margin-right: auto;
   position: absolute;
   left: -3rem;
-  top: 3px;
+  top: -6px;
   width: 28px;
   height: 25px;
+  width: 46px;
+  height: 43px;
   display: none;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
 }
 header nav .wrapper-menu:hover .line-menu {
   background-color: var(--accent-color);
@@ -358,6 +363,7 @@ header .dropdown-content .dropdown-items .dropdown-item.active::before {
 header .side-menu {
   display: none;
   position: fixed;
+  visibility: hidden;
   right: 0;
   top: 80px;
   height: 100vh;
@@ -406,6 +412,7 @@ header .side-menu ul li a:hover::before {
   box-shadow: 5px 0px 10px var(--accent-color);
 }
 header .side-menu.open {
+  visibility: visible;
   translate: 0% 0%;
 }
 header .side-menu.open li {
