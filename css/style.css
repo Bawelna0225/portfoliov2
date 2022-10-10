@@ -101,7 +101,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding-inline: 20px;
-  z-index: 1;
+  z-index: 10;
 }
 header .skip-nav {
   position: absolute;
@@ -669,6 +669,8 @@ header .side-menu.open li:nth-of-type(5) {
 
 .work {
   position: relative;
+  display: grid;
+  place-content: center;
 }
 .work::before {
   content: "";
@@ -699,6 +701,86 @@ header .side-menu.open li:nth-of-type(5) {
   background-image: repeating-linear-gradient(135deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+}
+.work .project {
+  width: min(100vw - 2rem, 1400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work .project ul {
+  list-style: none;
+}
+.work .project .description {
+  border-radius: 4px;
+  background-color: var(--navbar-color);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid var(--accent-color);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  padding: 20px;
+  margin-right: -80px;
+  z-index: 1;
+  box-shadow: 0px 0px 10px var(--accent-color);
+}
+.work .project .description svg {
+  stroke: var(--text-color);
+  fill: none;
+  width: 35px;
+  transition: 150ms linear;
+}
+.work .project .description .project-title {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  color: var(--accent-color);
+}
+.work .project .description .project-info ul li svg {
+  fill: var(--text-color);
+  width: 28px;
+}
+.work .project .description .project-info,
+.work .project .description .project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.work .project .description .project-info p,
+.work .project .description .project-links p {
+  font-size: clamp(1rem, 1vw, 1.4rem);
+}
+.work .project .description .project-info ul,
+.work .project .description .project-links ul {
+  display: flex;
+  gap: 10px;
+}
+.work .project .description .project-info ul li,
+.work .project .description .project-links ul li {
+  display: grid;
+  place-content: center;
+}
+.work .project .description .project-info ul li a:hover svg,
+.work .project .description .project-links ul li a:hover svg {
+  stroke: var(--accent-color);
+  rotate: 15deg;
+}
+.work .project .preview {
+  height: 500px;
+  position: relative;
+}
+.work .project .preview img {
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  width: 700px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid var(--accent-color);
 }
 
 .skills {
