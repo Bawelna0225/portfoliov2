@@ -84,6 +84,7 @@
 		height: 60px;
 		background-color: transparent;
 		.logo {
+			z-index: 20;
 			backdrop-filter: blur(4px);
 			height: 40px;
 			width: 100%;
@@ -91,7 +92,17 @@
 			left: 0;
 			padding-left: 1rem;
 			position: fixed;
+			
 		}
+		&::before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 40px;
+				left: 0;
+				top: 0;
+				background-color: var(--navbar-color);
+			}
 		nav {
 			backdrop-filter: blur(8px);
 			height: 60px;
