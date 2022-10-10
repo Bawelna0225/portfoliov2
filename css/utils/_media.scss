@@ -36,6 +36,16 @@
 	.side-menu {
 		display: block !important;
 	}
+	.work {
+		.project {
+			flex-direction: column-reverse;
+			.description {
+				margin-top: -30px;
+				margin-right: 0px;
+				width: 80%;
+			}
+		}
+	}
 }
 @media (max-width: 450px) {
 	* {
@@ -156,6 +166,22 @@
 			flex-direction: column;
 			button {
 				width: 100%;
+			}
+		}
+	}
+	.work {
+		.project {
+			flex-direction: column-reverse;
+			.description {
+				margin-top: -30px;
+				margin-right: 0px;
+				width: 100%;
+				text-align: center;
+				.project-info,
+				.project-links {
+					justify-content: center;
+					align-items: center;
+				}
 			}
 		}
 	}

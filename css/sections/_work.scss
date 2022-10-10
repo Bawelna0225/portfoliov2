@@ -182,13 +182,13 @@
 		}
 		.preview {
 
-			height: 500px;
+			// height: 500px;
 			position: relative;
 			img {
 				border-radius: 4px;
 				user-select: none;
 				pointer-events: none;
-				width: 700px;
+				width: min(calc(100vw - 3rem),700px);
 				height: 100%;
 				object-fit: cover;
 				border: 2px solid var(--accent-color);
