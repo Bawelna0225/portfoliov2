@@ -162,3 +162,38 @@ const changeTheme = (theme, e) => {
 		})
 		.catch((error) => console.log(`%cERROR! ${error}`, 'color: red; font-size: 18px'))
 }
+
+const prevBtn = document.querySelector('.prev')
+const nextBtn = document.querySelector('.next')
+const projects = [...document.querySelectorAll('.project')]
+let currentShownProjectIndex = 0
+
+const showPrevProject = () => {
+	if ((currentShownProjectIndex === 0)) {
+		currentShownProjectIndex = projects.length - 1
+	} else {
+		currentShownProjectIndex--
+	}
+	showCurrentProject()
+}
+
+const showNextProject = () => {
+	if (currentShownProjectIndex === projects.length - 1) {
+		currentShownProjectIndex = 0
+	} else {
+		currentShownProjectIndex++
+	}
+	showCurrentProject()
+}
+const showCurrentProject = () => {
+	projects.forEach((project) => {
+		project.classList.remove('active')
+	})
+	projects[currentShownProjectIndex].classList.add('active')
+}
+prevBtn.addEventListener('click', () => {
+	showPrevProject()
+})
+nextBtn.addEventListener('click', () => {
+	showNextProject()
+})

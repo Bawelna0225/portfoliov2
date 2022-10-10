@@ -18,7 +18,7 @@
 		--shadow-color: #030728;
 	}
 }
-@media (min-width: 451px) {
+@media (min-width: 521px) {
 	header {
 		backdrop-filter: blur(8px);
 	}
@@ -47,7 +47,7 @@
 		}
 	}
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
 	* {
 		cursor: auto;
 	}
@@ -181,17 +181,33 @@
 		}
 	}
 	.work {
+		.projects {
+			flex-direction: column-reverse;
+			.buttons {
+			flex-direction: row;
+				button {
+					width: calc(50vw - 2rem) !important;
+				}
+			}
+		}
 		.project {
 			flex-direction: column-reverse;
 			.description {
-				margin-top: -30px;
+				margin-top: 0;
 				margin-right: 0px;
 				width: 100%;
 				text-align: center;
+				padding: 10px;
 				.project-info,
 				.project-links {
 					justify-content: center;
 					align-items: center;
+				}
+			}
+			.preview {
+				height: auto;
+				img {
+					height: 30vh;
 				}
 			}
 		}

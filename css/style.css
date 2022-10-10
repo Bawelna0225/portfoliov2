@@ -702,11 +702,43 @@ header .side-menu.open li:nth-of-type(5) {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
 }
+.work .projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(100vw - 3rem, 1600px);
+  gap: 20px;
+  position: relative;
+}
+.work .projects .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.work .projects .buttons button {
+  background-color: var(--navbar-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  padding: 5px;
+  z-index: 2;
+  left: 10px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.work .projects .carrousel {
+  overflow: hidden;
+}
 .work .project {
-  width: min(100vw - 2rem, 1400px);
+  outline: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(150%);
+  display: none;
+}
+.work .project.active {
+  display: flex;
+  transform: translateX(0%);
 }
 .work .project ul {
   list-style: none;
@@ -722,6 +754,7 @@ header .side-menu.open li:nth-of-type(5) {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   padding: 20px;
+  width: 605px;
   margin-right: -80px;
   z-index: 1;
   box-shadow: 0px 0px 10px var(--accent-color);
@@ -733,7 +766,7 @@ header .side-menu.open li:nth-of-type(5) {
   transition: 150ms linear;
 }
 .work .project .description .project-title {
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   color: var(--accent-color);
 }
 .work .project .description .project-info ul li svg {
@@ -766,6 +799,7 @@ header .side-menu.open li:nth-of-type(5) {
   rotate: 15deg;
 }
 .work .project .preview {
+  height: 500px;
   position: relative;
 }
 .work .project .preview img {
@@ -882,7 +916,7 @@ header .side-menu.open li:nth-of-type(5) {
     --shadow-color: #030728;
   }
 }
-@media (min-width: 451px) {
+@media (min-width: 521px) {
   header {
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
@@ -910,7 +944,7 @@ header .side-menu.open li:nth-of-type(5) {
     width: 80%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   * {
     cursor: auto;
   }
@@ -1040,18 +1074,34 @@ header nav .themes-btn .icon rect {
   .home .buttons button {
     width: 100%;
   }
+  .work .projects {
+    flex-direction: column-reverse;
+  }
+  .work .projects .buttons {
+    flex-direction: row;
+  }
+  .work .projects .buttons button {
+    width: calc(50vw - 2rem) !important;
+  }
   .work .project {
     flex-direction: column-reverse;
   }
   .work .project .description {
-    margin-top: -30px;
+    margin-top: 0;
     margin-right: 0px;
     width: 100%;
     text-align: center;
+    padding: 10px;
   }
   .work .project .description .project-info,
 .work .project .description .project-links {
     justify-content: center;
     align-items: center;
+  }
+  .work .project .preview {
+    height: auto;
+  }
+  .work .project .preview img {
+    height: 30vh;
   }
 }/*# sourceMappingURL=style.css.map */
