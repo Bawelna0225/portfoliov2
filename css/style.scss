@@ -24,7 +24,7 @@ body {
 	background: var(--accent-color);
 }
 section {
-	height: 100vh;
+	min-height: 100vh;
 }
 #cursor {
 	position: fixed;

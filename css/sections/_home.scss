@@ -154,8 +154,9 @@
 		gap: 10px;
 		opacity: 0;
 		translate: 0% -20%;
-		button {
+		a {
 			color: var(--text-color);
+			text-decoration: none;
 			padding: 8px 12px;
 			border: none;
 			background-color: var(--primary-color) !important;
