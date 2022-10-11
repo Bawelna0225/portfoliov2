@@ -51,6 +51,7 @@ section {
 }
 
 .back-to-top {
+  z-index: 10;
   position: fixed;
   right: 1rem;
   bottom: -80px;
