@@ -1,62 +1,67 @@
 [
 	{
 		"skillName": "HTML",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/html.png",
 		"imgAlt": "html"
 	},
 	{
 		"skillName": "CSS",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/css.png",
 		"imgAlt": "css"
 	},
 	{
 		"skillName": "SCSS",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/sass.png",
 		"imgAlt": "sass"
 	},
 	{
 		"skillName": "JavaScript",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/js.png",
 		"imgAlt": "javascript"
 	},
 	{
 		"skillName": "TypeScript",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/ts.png",
 		"imgAlt": "typescript"
 	},
 	{
 		"skillName": "React.js",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/react.png",
 		"imgAlt": "react"
 	},
 	{
+		"skillName": "Git",
+		"imgSrc": "../images/skills/git.png",
+		"imgAlt": "git"
+	},
+	{
 		"skillName": "Bootstrap",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/bootstrap.png",
 		"imgAlt": "Bootstrap"
 	},
 	{
 		"skillName": "Figma",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/figma.png",
 		"imgAlt": "Figma"
 	},
 	{
 		"skillName": "PHP",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/php.png",
 		"imgAlt": "PHP"
 	},
 	{
 		"skillName": "MySQL",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/sql.png",
 		"imgAlt": "MySQL"
 	},
 	{
 		"skillName": "DaVinci Resolve",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/davinci.png",
 		"imgAlt": "DaVinci Resolve"
 	},
 	{
 		"skillName": "Adobe PhotoShop",
-		"imgSrc": "",
+		"imgSrc": "../images/skills/photoshop.png",
 		"imgAlt": "Adobe PhotoShop"
 	}
 ]
