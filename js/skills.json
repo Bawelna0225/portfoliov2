@@ -1,0 +1,62 @@
+[
+	{
+		"skillName": "HTML",
+		"imgSrc": "",
+		"imgAlt": "html"
+	},
+	{
+		"skillName": "CSS",
+		"imgSrc": "",
+		"imgAlt": "css"
+	},
+	{
+		"skillName": "SCSS",
+		"imgSrc": "",
+		"imgAlt": "sass"
+	},
+	{
+		"skillName": "JavaScript",
+		"imgSrc": "",
+		"imgAlt": "javascript"
+	},
+	{
+		"skillName": "TypeScript",
+		"imgSrc": "",
+		"imgAlt": "typescript"
+	},
+	{
+		"skillName": "React.js",
+		"imgSrc": "",
+		"imgAlt": "react"
+	},
+	{
+		"skillName": "Bootstrap",
+		"imgSrc": "",
+		"imgAlt": "Bootstrap"
+	},
+	{
+		"skillName": "Figma",
+		"imgSrc": "",
+		"imgAlt": "Figma"
+	},
+	{
+		"skillName": "PHP",
+		"imgSrc": "",
+		"imgAlt": "PHP"
+	},
+	{
+		"skillName": "MySQL",
+		"imgSrc": "",
+		"imgAlt": "MySQL"
+	},
+	{
+		"skillName": "DaVinci Resolve",
+		"imgSrc": "",
+		"imgAlt": "DaVinci Resolve"
+	},
+	{
+		"skillName": "Adobe PhotoShop",
+		"imgSrc": "",
+		"imgAlt": "Adobe PhotoShop"
+	}
+]

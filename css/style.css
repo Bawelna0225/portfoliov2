@@ -827,6 +827,8 @@ header .side-menu.open li:nth-of-type(5) {
 
 .skills {
   position: relative;
+  display: grid;
+  place-content: center;
 }
 .skills::before {
   content: "";
@@ -842,6 +844,80 @@ header .side-menu.open li:nth-of-type(5) {
   background-image: repeating-linear-gradient(135deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+}
+.skills .horizontal-scroller {
+  width: min(100vw - 2rem, 1600px);
+  margin: 0 auto;
+  margin-left: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  grid-auto-rows: 350px;
+  grid-auto-columns: 21%;
+  padding: 0 15px 15px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  position: relative;
+}
+.skills .horizontal-scroller .skill {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  background-color: var(--navbar-color);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+  transition: 250ms linear;
+}
+.skills .horizontal-scroller .skill.loading {
+  opacity: 0.3;
+  transition: 300ms linear;
+}
+.skills .horizontal-scroller .skill.loading .img-loader {
+  opacity: 1;
+}
+.skills .horizontal-scroller .skill .img-loader {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: 10;
+}
+.skills .horizontal-scroller .skill img {
+  height: 300px;
+  margin: 0 auto;
+  inline-size: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: grayscale(100%);
+}
+.skills .horizontal-scroller .skill .description {
+  padding-top: 30px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  background-color: var(--navbar-color);
+  border-radius: 12px;
+  border-top: 2px dashed var(--accent-color2);
+  position: absolute;
+  bottom: -200px;
+  transition: 300ms linear;
+}
+.skills .horizontal-scroller .skill:hover img {
+  transition: 250ms linear;
+  filter: grayscale(0%);
+}
+.skills .horizontal-scroller .skill:hover .description {
+  bottom: 0;
+  transition: 300ms linear;
 }
 
 @-webkit-keyframes rotate-left {
@@ -963,11 +1039,11 @@ header .side-menu.open li:nth-of-type(5) {
 @media (prefers-color-scheme: dark) {
   :root {
     --navbar-color: #000000e0;
-    --primary-color: #000000;
+    --primary-color: #040510;
     --accent-color: #12aae1;
     --accent-color2: #0c4357;
     --text-color: #f9f9f9;
-    --shadow-color: #030728;
+    --shadow-color: #01020ea1;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -977,7 +1053,7 @@ header .side-menu.open li:nth-of-type(5) {
     --accent-color: #12aae1;
     --accent-color2: #0c4357;
     --text-color: #000000;
-    --shadow-color: #030728;
+    --shadow-color: #01020e32;
   }
 }
 @media (min-width: 521px) {

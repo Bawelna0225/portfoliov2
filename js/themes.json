@@ -4,9 +4,9 @@
 		"id": "blue-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#040510",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#12aae1",
 			"secondAccentColor": "#0c4357"
 		}
@@ -18,7 +18,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#12aae1",
 			"secondAccentColor": "#0c4357"
 		}
@@ -42,7 +42,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#e16f12",
 			"secondAccentColor": "#914d0d"
 		}
@@ -66,7 +66,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#5ae112",
 			"secondAccentColor": "#0e7227"
 		}
@@ -90,7 +90,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#e11212",
 			"secondAccentColor": "#720e0e"
 		}
@@ -114,7 +114,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#b112e1",
 			"secondAccentColor": "#4b0948"
 		}
@@ -138,7 +138,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#b7b5b5",
 			"secondAccentColor": "#434141"
 		}
@@ -162,7 +162,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#edcb09",
 			"secondAccentColor": "#956609"
 		}
@@ -186,7 +186,7 @@
 			"navbarColor": "#ffffff66",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#11a9af",
 			"secondAccentColor": "#950985"
 		}
@@ -210,7 +210,7 @@
 			"navbarColor": "#ffffffe0",
 			"primaryColor": "#ffffff",
 			"textColor": "#000000",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020e32",
 			"firstAccentColor": "#994f1d",
 			"secondAccentColor": "#72390e"
 		}
