@@ -1083,6 +1083,14 @@ header .side-menu.open li:nth-of-type(5) {
     margin-right: 0px;
     width: 80%;
   }
+  .skills .horizontal-scroller {
+    grid-auto-columns: 36%;
+  }
+}
+@media (max-width: 792px) {
+  .skills .horizontal-scroller {
+    grid-auto-columns: 47%;
+  }
 }
 @media (max-width: 520px) {
   * {
@@ -1243,5 +1251,8 @@ header nav .themes-btn .icon rect {
   }
   .work .project .preview img {
     height: 30vh;
+  }
+  .skills .horizontal-scroller {
+    grid-auto-columns: 80%;
   }
 }/*# sourceMappingURL=style.css.map */

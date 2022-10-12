@@ -46,6 +46,18 @@
 			}
 		}
 	}
+		.skills {
+		.horizontal-scroller {
+			grid-auto-columns: 36%;
+		}
+	}
+}
+@media (max-width: 792px) {
+	.skills {
+		.horizontal-scroller {
+			grid-auto-columns: 47%;
+		}
+	}
 }
 @media (max-width: 520px) {
 	* {
@@ -210,6 +222,11 @@
 					height: 30vh;
 				}
 			}
+		}
+	}
+	.skills {
+		.horizontal-scroller {
+			grid-auto-columns: 80%;
 		}
 	}
 }
