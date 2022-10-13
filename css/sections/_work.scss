@@ -151,10 +151,11 @@
 			opacity: 1;
 			transform: translateX(0%);
 			.description {
-				animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				animation-delay: 300ms !important;
+				animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 			}
 			.preview {
-				animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 				
 			}
 		}
