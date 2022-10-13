@@ -876,6 +876,10 @@ header .side-menu.open li:nth-of-type(5) {
   -o-object-fit: contain;
      object-fit: contain;
   filter: grayscale(100%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .skills .swiper .swiper-slide .description {
   padding-top: 30px;

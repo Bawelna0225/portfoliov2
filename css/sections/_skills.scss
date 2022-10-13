@@ -84,6 +84,7 @@
 				inline-size: 100%;
 				object-fit: contain;
 				filter: grayscale(100%);
+				user-select: none;
 			}
 			.description {
 				padding-top: 30px;
