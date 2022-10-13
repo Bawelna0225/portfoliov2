@@ -894,13 +894,10 @@ header .side-menu.open li:nth-of-type(5) {
   transition: 300ms linear;
   translate: 0px 0%;
 }
-.skills .swiper-slide-visible {
-  border-radius: 12px !important;
-}
-.skills .swiper-pagination .swiper-pagination-bullet {
+.skills .swiper .swiper-pagination .swiper-pagination-bullet {
   background-color: var(--accent-color);
 }
-.skills .swiper-pagination .swiper-pagination-bullet-active {
+.skills .swiper .swiper-pagination .swiper-pagination-bullet-active {
   width: 20px;
   border-radius: 8px;
 }

@@ -108,18 +108,14 @@
 				}
 			}
 		}
-	}
-
-	.swiper-slide-visible {
-		border-radius: 12px !important;
-	}
-	.swiper-pagination {
-		.swiper-pagination-bullet {
-			background-color: var(--accent-color);
-		}
-		.swiper-pagination-bullet-active {
-			width: 20px;
-			border-radius: 8px;
+		.swiper-pagination {
+			.swiper-pagination-bullet {
+				background-color: var(--accent-color);
+			}
+			.swiper-pagination-bullet-active {
+				width: 20px;
+				border-radius: 8px;
+			}
 		}
 	}
 }
