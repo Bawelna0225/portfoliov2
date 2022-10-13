@@ -59,49 +59,24 @@
 			linear-gradient(90deg, var(--accent-color), var(--accent-color2));
 		backdrop-filter: blur(8px);
 	}
-	.horizontal-scroller {
-		width: min(calc(100vw - 2rem), 1600px);
-		margin: 0 auto;
-		margin-left: 20px;
-		display: grid;
-		grid-auto-flow: column;
-		gap: 15px;
-		grid-auto-rows: 350px;
-		grid-auto-columns: 21%;
-		padding: 0 15px 15px;
-		overflow-x: auto;
-		overscroll-behavior-inline: contain;
-		position: relative;
-		.skill {
-			&.loading {
-				opacity: 0.3;
-				transition: 300ms linear;
-				.img-loader {
-					opacity: 1;
-				}
-			}
-			.img-loader {
-				opacity: 0;
-				position: absolute;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 100%;
-				height: 100%;
-				background-color: var(--primary);
-				z-index: 10;
-			}
-			display: grid;
-			gap: 15px;
-			margin-top: 15px;
-			padding: 15px;
+	.swiper {
+		width: min(100% - 2rem, 1600px);
+		text-align: center;
+		padding-block: 50px;
+		padding-inline: 15px;
+		.swiper-slide {
+			width: min(calc(100% - 2rem), 350px);
+			height: 450px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			transition: 0.5s linear;
+			position: relative !important;
 			border-radius: 8px;
 			box-shadow: 0px 0px 10px var(--shadow-color);
 			background-color: var(--navbar-color);
-			backdrop-filter: blur(4px);
-			position: relative;
 			overflow: hidden;
-			transition: 250ms linear;
 			img {
 				height: 300px;
 				margin: 0 auto;
@@ -116,9 +91,9 @@
 				text-align: center;
 				background-color: var(--navbar-color);
 				border-radius: 12px;
-				border-top: 2px dashed var(--accent-color2);
 				position: absolute;
-				bottom: -200px;
+				bottom: 0px;
+				translate: 0px 100%;
 				transition: 300ms linear;
 			}
 			&:hover {
@@ -129,9 +104,22 @@
 				.description {
 					bottom: 0;
 					transition: 300ms linear;
+					translate: 0px 0%;
 				}
 			}
 		}
 	}
-}
 
+	.swiper-slide-visible {
+		border-radius: 12px !important;
+	}
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			background-color: var(--accent-color);
+		}
+		.swiper-pagination-bullet-active {
+			width: 20px;
+			border-radius: 8px;
+		}
+	}
+}

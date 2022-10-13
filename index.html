@@ -8,6 +8,8 @@
 		<meta name="keyword" content="portfolio, javascript, developer, frontend, webdev" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<script src="./js/loadTheme.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js"></script>
 		<script src="./js/cursor.js" defer></script>
 		<script src="./js/main.js" defer></script>
 		<title>Paweł Czarnecki Portfolio</title>
@@ -201,7 +203,7 @@
 						</button>
 					</div>
 					<div class="carrousel">
-												<div class="project active">
+						<div class="project active">
 							<div class="description">
 								<span class="project-title">Box Shadow Generator</span>
 								<div class="project-info">
@@ -333,31 +335,49 @@
 				</div>
 			</section>
 			<section class="skills" id="skills">
-				<div class="horizontal-scroller snaps-inline">
-					<div class="skill">
-						<img src="./images/skills/html.png" alt="">
-						<div class="description">HTML</div>
+				<div class="swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<img src="./images/skills/html.png" alt="" />
+							<div class="description">HTML</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/css.png" alt="" />
+							<div class="description">CSS</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/sass.png" alt="" />
+							<div class="description">SCSS</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/js.png" alt="" />
+							<div class="description">JavaScript</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/react.png" alt="" />
+							<div class="description">React.js</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/figma.png" alt="" />
+							<div class="description">Figma</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/git.png" alt="" />
+							<div class="description">Git</div>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/skills/davinci.png" alt="" />
+							<div class="description">DaVinci Resolve</div>
+						</div>
 					</div>
-					<div class="skill">
-						<img src="./images/skills/css.png" alt="">
-						<div class="description">CSS</div>
-					</div>
-					<div class="skill">
-						<img src="./images/skills/sass.png" alt="">
-						<div class="description">Name</div>
-					</div>
-					<div class="skill">
-						<img src="./images/skills/js.png" alt="">
-						<div class="description">Name</div>
-					</div>
-					<div class="skill">
-						<img src="./images/skills/react.png" alt="">
-						<div class="description">Name</div>
-					</div>
-					<div class="skill">
-						<img src="./images/skills/git.png" alt="">
-						<div class="description">Name</div>
-					</div>
+					<!-- pagination -->
+					<div class="swiper-pagination"></div>
+
+					<!-- navigation buttons -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
 			</section>
 			<section class="about" id="about"></section>

@@ -15,8 +15,8 @@ const funFacts = [
 	`<span>Did You Know?</span><br> The first computer virus was harmless.`,
 ]
 // Displaying random fun fact
-const loadingFunFacts = funFacts[Math.floor(Math.random() * funFacts.length)]
-loadingFunFactContainer.innerHTML = loadingFunFacts
+
+loadingFunFactContainer.innerHTML = funFacts[Math.floor(Math.random() * funFacts.length)]
 
 // Removing Preloader and animating home section in
 window.addEventListener('load', () => {
@@ -40,10 +40,11 @@ window.addEventListener('scroll', () => {
 		backToTop.classList.remove('active')
 	}
 })
-// Opening themes box
+// Themes
 const themesBtn = document.querySelector('.themes-btn')
 const themesBox = document.querySelector('#dropdown')
 
+// Opening themes box
 themesBtn.addEventListener('click', (e) => {
 	themesBox.classList.toggle('open')
 	const allThemes = [...document.querySelectorAll('.dropdown-item')]
@@ -78,7 +79,7 @@ window.addEventListener('keydown', (e) => {
 		document.getElementById('dropdown').classList.remove('open')
 	}
 	if (sideMenu.classList.contains('open') && e.key === 'Escape') {
-		// if user clicks outside theme-box content close theme-box
+		// if user clicks on esc while side menu is open, close it
 		sideMenu.classList.remove('open')
 		toggleSideMenuBtn.classList.remove('open')
 	}
@@ -113,6 +114,7 @@ fetch('../js/themes.json')
 				id,
 				colors: { primaryColor, firstAccentColor, secondAccentColor },
 			} = element
+			// Generating Themes
 			const theme = createTheme(id, name)
 			theme.style.backgroundImage = `linear-gradient(45deg, ${primaryColor} 0%, ${primaryColor} 33%, ${firstAccentColor} 33%, ${firstAccentColor} 66%, ${secondAccentColor} 66%, ${secondAccentColor} 100%)`
 			themesContainer.appendChild(theme)
@@ -121,6 +123,7 @@ fetch('../js/themes.json')
 
 const snackBar = document.querySelector('.snackbar')
 let snackBarInterval
+// Changing theme
 const changeTheme = (theme, e) => {
 	;[...document.querySelectorAll('.dropdown-item')].filter((theme) => {
 		theme.classList.remove('active')
@@ -162,14 +165,14 @@ const changeTheme = (theme, e) => {
 		})
 		.catch((error) => console.log(`%cERROR! ${error}`, 'color: red; font-size: 18px'))
 }
-
+// My Work Section Slider
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 const projects = [...document.querySelectorAll('.project')]
 let currentShownProjectIndex = 0
 
-const showPrevProject = () => {
-	if ((currentShownProjectIndex === 0)) {
+const setPrevProject = () => {
+	if (currentShownProjectIndex === 0) {
 		currentShownProjectIndex = projects.length - 1
 	} else {
 		currentShownProjectIndex--
@@ -177,7 +180,7 @@ const showPrevProject = () => {
 	showCurrentProject()
 }
 
-const showNextProject = () => {
+const setNextProject = () => {
 	if (currentShownProjectIndex === projects.length - 1) {
 		currentShownProjectIndex = 0
 	} else {
@@ -192,8 +195,26 @@ const showCurrentProject = () => {
 	projects[currentShownProjectIndex].classList.add('active')
 }
 prevBtn.addEventListener('click', () => {
-	showPrevProject()
+	setPrevProject()
 })
 nextBtn.addEventListener('click', () => {
-	showNextProject()
+	setNextProject()
+})
+// Skill Swiper
+const swiper = new Swiper('.swiper', {
+	direction: 'horizontal',
+	loop: false,
+	centeredSlides: false,
+	slidesPerView: 'auto',
+	spaceBetween: 15,
+	pagination: {
+		el: '.swiper-pagination',
+		dynamicBullets: false,
+	},
+
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
 })
