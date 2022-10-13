@@ -853,6 +853,9 @@ header .side-menu.open li:nth-of-type(5) {
   padding-block: 50px;
   padding-inline: 15px;
 }
+.skills .swiper .swiper-button-prev, .skills .swiper .swiper-button-next {
+  color: var(--accent-color);
+}
 .skills .swiper .swiper-slide {
   width: min(100% - 2rem, 350px);
   height: 450px;
@@ -862,6 +865,7 @@ header .side-menu.open li:nth-of-type(5) {
   justify-content: center;
   transition: 0.5s linear;
   position: relative !important;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px var(--shadow-color);
   background-color: var(--navbar-color);
@@ -1104,14 +1108,6 @@ header .side-menu.open li:nth-of-type(5) {
     margin-right: 0px;
     width: 80%;
   }
-  .skills .horizontal-scroller .inner-slider {
-    grid-auto-columns: 36%;
-  }
-}
-@media (max-width: 792px) {
-  .skills .horizontal-scroller .inner-slider {
-    grid-auto-columns: 47%;
-  }
 }
 @media (max-width: 520px) {
   * {
@@ -1272,8 +1268,5 @@ header nav .themes-btn .icon rect {
   }
   .work .project .preview img {
     height: 30vh;
-  }
-  .skills .horizontal-scroller .inner-slider {
-    grid-auto-columns: 80%;
   }
 }/*# sourceMappingURL=style.css.map */

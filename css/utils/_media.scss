@@ -46,19 +46,8 @@
 			}
 		}
 	}
-		.skills .horizontal-scroller {
-		.inner-slider {
-			grid-auto-columns: 36%;
-		}
-	}
 }
-@media (max-width: 792px) {
-	.skills .horizontal-scroller {
-		.inner-slider {
-			grid-auto-columns: 47%;
-		}
-	}
-}
+
 @media (max-width: 520px) {
 	* {
 		cursor: auto;
@@ -222,11 +211,6 @@
 					height: 30vh;
 				}
 			}
-		}
-	}
-	.skills .horizontal-scroller {
-		.inner-slider {
-			grid-auto-columns: 80%;
 		}
 	}
 }
