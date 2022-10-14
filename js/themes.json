@@ -30,7 +30,7 @@
 			"navbarColor": "#040510e0",
 			"primaryColor": "#040510",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#e16f12",
 			"secondAccentColor": "#914d0d"
 		}
@@ -54,7 +54,7 @@
 			"navbarColor": "#040510e0",
 			"primaryColor": "#040510",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#5ae112",
 			"secondAccentColor": "#0e7227"
 		}
@@ -76,9 +76,9 @@
 		"id": "red-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#e11212",
 			"secondAccentColor": "#720e0e"
 		}
@@ -100,9 +100,9 @@
 		"id": "purple-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#b112e1",
 			"secondAccentColor": "#4b0948"
 		}
@@ -124,9 +124,9 @@
 		"id": "silver-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#b7b5b5",
 			"secondAccentColor": "#434141"
 		}
@@ -148,9 +148,9 @@
 		"id": "gold-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#edcb09",
 			"secondAccentColor": "#956609"
 		}
@@ -172,9 +172,9 @@
 		"id": "neon-dark",
 		"colors": {
 			"navbarColor": "#10040455",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#11a9af",
 			"secondAccentColor": "#950985"
 		}
@@ -196,9 +196,9 @@
 		"id": "brown-dark",
 		"colors": {
 			"navbarColor": "#000000e0",
-			"primaryColor": "#000000",
+			"primaryColor": "#050505",
 			"textColor": "#f9f9f9",
-			"shadowColor": "#030728",
+			"shadowColor": "#01020ea1",
 			"firstAccentColor": "#994f1d",
 			"secondAccentColor": "#72390e"
 		}
