@@ -194,6 +194,7 @@ const showCurrentProject = () => {
 	})
 	projects[currentShownProjectIndex].classList.add('active')
 }
+
 prevBtn.addEventListener('click', () => {
 	setPrevProject()
 })
