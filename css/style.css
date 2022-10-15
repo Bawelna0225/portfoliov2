@@ -932,6 +932,67 @@ header .side-menu.open li:nth-of-type(5) {
   border-radius: 8px;
 }
 
+.contact {
+  width: min(100% - 2rem, 1600px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact form .form-input {
+  position: relative;
+}
+.contact form .form-input input {
+  padding: 15px;
+  width: 500px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+.contact form .form-input input:-moz-placeholder-shown ~ label {
+  opacity: 0;
+}
+.contact form .form-input input:-ms-input-placeholder ~ label {
+  opacity: 0;
+}
+.contact form .form-input input:placeholder-shown ~ label {
+  opacity: 0;
+}
+.contact form .form-input input:empty ~ label {
+  top: 0%;
+  transition: top 200ms linear;
+}
+.contact form .form-input input:focus ~ label {
+  opacity: 1;
+  top: 0%;
+}
+.contact form .form-input label {
+  pointer-events: none;
+  font-size: 0.9rem;
+  transition: top 200ms linear;
+  padding: 2px;
+  position: absolute;
+  background-color: var(--primary-color);
+  left: 15px;
+  translate: 0% -50%;
+}
+.contact form button {
+  padding: 15px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+.contact form button:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
 @-webkit-keyframes rotate-left {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
