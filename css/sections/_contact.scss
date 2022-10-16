@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 50px;
+	justify-content: space-around;
 	form {
 		display: flex;
 		flex-direction: column;
@@ -49,6 +49,33 @@
 			&:hover {
 				color: var(--accent-color);
 				border: 1px solid var(--accent-color);
+			}
+		}
+	}
+	.right-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		p {
+			display: flex;
+			padding: 15px 55px 15px 15px;
+			flex-direction: column;
+			border: 1px solid var(--accent-color);
+			position: relative;
+			&::before {
+				padding: 0px 2px;
+				font-size: 0.9rem;
+				position: absolute;
+				top: -50%;
+				translate: 0% 50%;
+				// border: 1px solid saddlebrown;
+				background-color: var(--primary-color);
+			}
+			&:first-of-type::before {
+				content: 'My Email';
+			}
+			&:last-of-type::before {
+				content: 'My Phone';
 			}
 		}
 	}

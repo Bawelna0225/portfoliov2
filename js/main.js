@@ -169,37 +169,32 @@ const changeTheme = (theme, e) => {
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 const projects = [...document.querySelectorAll('.project')]
-let currentShownProjectIndex = 0
 
-const setPrevProject = () => {
-	if (currentShownProjectIndex === 0) {
-		currentShownProjectIndex = projects.length - 1
+const showPrevProject = () => {
+	const currentShownProject = document.querySelector('.project.active')
+	currentShownProject.classList.remove('active')
+	if (currentShownProject.previousElementSibling) {
+		currentShownProject.previousElementSibling.classList.add('active')
 	} else {
-		currentShownProjectIndex--
+		projects[projects.length - 1].classList.add('active')
 	}
-	showCurrentProject()
 }
 
-const setNextProject = () => {
-	if (currentShownProjectIndex === projects.length - 1) {
-		currentShownProjectIndex = 0
+const showNextProject = () => {
+	const currentShownProject = document.querySelector('.project.active')
+	currentShownProject.classList.remove('active')
+	if (currentShownProject.nextElementSibling) {
+		currentShownProject.nextElementSibling.classList.add('active')
 	} else {
-		currentShownProjectIndex++
+		projects[0].classList.add('active')
 	}
-	showCurrentProject()
-}
-const showCurrentProject = () => {
-	projects.forEach((project) => {
-		project.classList.remove('active')
-	})
-	projects[currentShownProjectIndex].classList.add('active')
 }
 
 prevBtn.addEventListener('click', () => {
-	setPrevProject()
+	showPrevProject()
 })
 nextBtn.addEventListener('click', () => {
-	setNextProject()
+	showNextProject()
 })
 // Skill Swiper
 const swiper = new Swiper('.swiper', {

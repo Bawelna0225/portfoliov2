@@ -146,6 +146,7 @@
 		align-items: center;
 		justify-content: center;
 		display: none;
+		animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 		&.active {
 			display: flex;
 			opacity: 1;
@@ -162,6 +163,8 @@
 			list-style: none;
 		}
 		.description {
+				// transition: 300ms ease-in-out;
+
 			border-radius: 4px;
 			background-color: var(--navbar-color);
 			display: flex;

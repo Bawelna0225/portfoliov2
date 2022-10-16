@@ -755,6 +755,8 @@ header .side-menu.open li:nth-of-type(5) {
   align-items: center;
   justify-content: center;
   display: none;
+  -webkit-animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .work .project.active {
   display: flex;
@@ -938,7 +940,7 @@ header .side-menu.open li:nth-of-type(5) {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  justify-content: space-around;
 }
 .contact form {
   display: flex;
@@ -991,6 +993,32 @@ header .side-menu.open li:nth-of-type(5) {
 .contact form button:hover {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
+}
+.contact .right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contact .right-panel p {
+  display: flex;
+  padding: 15px 55px 15px 15px;
+  flex-direction: column;
+  border: 1px solid var(--accent-color);
+  position: relative;
+}
+.contact .right-panel p::before {
+  padding: 0px 2px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: -50%;
+  translate: 0% 50%;
+  background-color: var(--primary-color);
+}
+.contact .right-panel p:first-of-type::before {
+  content: "My Email";
+}
+.contact .right-panel p:last-of-type::before {
+  content: "My Phone";
 }
 
 @-webkit-keyframes rotate-left {
