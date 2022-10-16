@@ -68,7 +68,7 @@ window.addEventListener('click', (e) => {
 		document.getElementById('dropdown').classList.remove('open')
 	}
 	if (!toggleSideMenuBtn.contains(e.target) && !sideMenu.contains(e.target)) {
-		// if user clicks outside theme-box content close theme-box
+		// if user clicks outside side menu content, close it
 		sideMenu.classList.remove('open')
 		toggleSideMenuBtn.classList.remove('open')
 	}
@@ -84,27 +84,12 @@ window.addEventListener('keydown', (e) => {
 		toggleSideMenuBtn.classList.remove('open')
 	}
 })
-// Theme switcher
 
+// Theme switcher
 const themesContainer = document.querySelector('.dropdown-items')
 
-const createTheme = (id, name) => {
-	const dropdownItem = document.createElement('button')
-	dropdownItem.classList.add('dropdown-item')
-	dropdownItem.setAttribute('data-theme-id', id)
-
-	const themeDescription = document.createElement('div')
-	themeDescription.classList.add('theme-description')
-	themeDescription.innerHTML = `Theme: <br/> ${name}`
-
-	dropdownItem.appendChild(themeDescription)
-
-	dropdownItem.addEventListener('click', (e) => {
-		changeTheme(id, e)
-	})
-	return dropdownItem
-}
-
+import { createTheme } from "./modules/createTheme.js";
+// initial fetch to create themes
 fetch('../js/themes.json')
 	.then((response) => response.json())
 	.then((data) => {
@@ -128,6 +113,7 @@ const changeTheme = (theme, e) => {
 	;[...document.querySelectorAll('.dropdown-item')].filter((theme) => {
 		theme.classList.remove('active')
 	})
+	// fetching to change page colors
 	fetch('../js/themes.json')
 		.then((response) => response.json())
 		.then((data) => {
@@ -168,27 +154,9 @@ const changeTheme = (theme, e) => {
 // My Work Section Slider
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
-const projects = [...document.querySelectorAll('.project')]
 
-const showPrevProject = () => {
-	const currentShownProject = document.querySelector('.project.active')
-	currentShownProject.classList.remove('active')
-	if (currentShownProject.previousElementSibling) {
-		currentShownProject.previousElementSibling.classList.add('active')
-	} else {
-		projects[projects.length - 1].classList.add('active')
-	}
-}
-
-const showNextProject = () => {
-	const currentShownProject = document.querySelector('.project.active')
-	currentShownProject.classList.remove('active')
-	if (currentShownProject.nextElementSibling) {
-		currentShownProject.nextElementSibling.classList.add('active')
-	} else {
-		projects[0].classList.add('active')
-	}
-}
+import { showNextProject } from '../js/modules/workSlider.js'
+import { showPrevProject } from '../js/modules/workSlider.js'
 
 prevBtn.addEventListener('click', () => {
 	showPrevProject()
@@ -197,34 +165,4 @@ nextBtn.addEventListener('click', () => {
 	showNextProject()
 })
 // Skill Swiper
-const swiper = new Swiper('.swiper', {
-	direction: 'horizontal',
-	loop: false,
-	centeredSlides: false,
-	slidesPerView: 1.1,
-	spaceBetween: 20,
-	pagination: {
-		el: '.swiper-pagination',
-		dynamicBullets: false,
-	},
-	breakpoints: {
-		520: {
-			slidesPerView: 1.4,
-		},
-		640: {
-			slidesPerView: 2.4,
-		},
-		968: {
-			slidesPerView: 3.4,
-		},
-		1300: {
-			slidesPerView: 4.4,
-		},
-	},
-
-	// Navigation arrows
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-})
+import { swiper } from './modules/skillSwiper.js'
