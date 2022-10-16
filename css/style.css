@@ -934,6 +934,24 @@ header .side-menu.open li:nth-of-type(5) {
   border-radius: 8px;
 }
 
+.about {
+  display: grid;
+  position: relative;
+}
+.about::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  position: absolute;
+  right: 0;
+  bottom: 0 !important;
+  -webkit-clip-path: polygon(100% 40%, 50% 100%, 100% 100%);
+          clip-path: polygon(100% 40%, 50% 100%, 100% 100%);
+  z-index: -1;
+  background-image: repeating-linear-gradient(135deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+}
+
 .contact {
   display: grid;
   position: relative;
@@ -970,39 +988,34 @@ header .side-menu.open li:nth-of-type(5) {
 .contact .container form .form-input {
   position: relative;
 }
-.contact .container form .form-input input {
+.contact .container form .form-input input,
+.contact .container form .form-input textarea {
   padding: 15px;
   width: 100%;
   border: 1px solid var(--accent-color);
   background-color: var(--primary-color);
   color: var(--text-color);
 }
-.contact .container form .form-input input:-moz-placeholder-shown ~ label {
-  opacity: 0;
+.contact .container form .form-input input:focus ~ label,
+.contact .container form .form-input textarea:focus ~ label {
+  transform: translateY(-50%);
 }
-.contact .container form .form-input input:-ms-input-placeholder ~ label {
-  opacity: 0;
+.contact .container form .form-input input:valid ~ label,
+.contact .container form .form-input textarea:valid ~ label {
+  transform: translateY(-50%);
 }
-.contact .container form .form-input input:placeholder-shown ~ label {
-  opacity: 0;
-}
-.contact .container form .form-input input:empty ~ label {
-  top: 0%;
-  transition: top 200ms linear;
-}
-.contact .container form .form-input input:focus ~ label {
-  opacity: 1;
-  top: 0%;
+.contact .container form .form-input textarea {
+  resize: none;
 }
 .contact .container form .form-input label {
+  transform: translateY(50%);
   pointer-events: none;
   font-size: 0.9rem;
-  transition: top 200ms linear;
+  transition: transform 200ms linear;
   padding: 2px;
   position: absolute;
   background-color: var(--primary-color);
   left: 15px;
-  translate: 0% -50%;
 }
 .contact .container form button {
   padding: 15px;

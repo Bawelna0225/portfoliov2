@@ -72,35 +72,32 @@
 			width: min(calc(100vw - 2rem), 500px);
 			.form-input {
 				position: relative;
-				input {
+				input,
+				textarea {
 					padding: 15px;
 					width: 100%;
-					// width: 500px;
 					border: 1px solid var(--accent-color);
 					background-color: var(--primary-color);
 					color: var(--text-color);
-					&:placeholder-shown ~ label {
-						opacity: 0;
-					}
-					&:empty ~ label {
-						top: 0%;
-						transition: top 200ms linear;
-					}
 					&:focus ~ label {
-						opacity: 1;
-						top: 0%;
+						transform: translateY(-50%);
+					}
+					&:valid ~ label {
+						transform: translateY(-50%);
 					}
 				}
+				textarea {
+					resize: none;
+				}
 				label {
-					// top: 50%;
+					transform: translateY(50%);
 					pointer-events: none;
 					font-size: 0.9rem;
-					transition: top 200ms linear;
+					transition: transform 200ms linear;
 					padding: 2px;
 					position: absolute;
 					background-color: var(--primary-color);
 					left: 15px;
-					translate: 0% -50%;
 				}
 			}
 			button {
