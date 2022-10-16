@@ -1,3 +1,5 @@
+import { changeTheme } from "./changeTheme.js";
+
 export const createTheme = (id, name) => {
 	const dropdownItem = document.createElement('button')
 	dropdownItem.classList.add('dropdown-item')

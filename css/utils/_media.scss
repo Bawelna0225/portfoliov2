@@ -26,6 +26,19 @@
 			}
 		}
 	}
+	.about{
+
+	}
+	.contact .container {
+		flex-direction: column;
+		justify-content: center;
+		gap: 50px;
+		form{
+			.right-panel {
+				width: 100%;
+			}
+		}
+	}
 }
 
 @media (max-width: 520px) {
