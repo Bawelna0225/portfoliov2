@@ -204,3 +204,20 @@ const emailIsValid = (emailInput) => {
 	let pattern = /\S+@\S+\.\S+/
 	return pattern.test(emailInput)
 }
+// copy-to-clipboard
+
+const copyToClipboard = document.querySelector('.copy-to-clipboard')
+
+copyToClipboard.addEventListener('click', () => {
+	navigator.clipboard.writeText('pawelczarnecki0225@gmail.com').then(function () {
+		const snackBar = document.querySelector('.snackbar')
+
+		let snackBarInterval
+		clearInterval(snackBarInterval)
+		snackBar.textContent = `Copied To Clipboard!`
+		snackBar.classList.add('active')
+		snackBarInterval = setInterval(() => {
+			snackBar.classList.remove('active')
+		}, 3000)
+	})
+})

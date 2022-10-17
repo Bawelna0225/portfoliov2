@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<script src="./js/loadTheme.js"></script>
 		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js" defer></script>
 		<script src="./js/cursor.js" defer></script>
 		<script src="./js/main.js" type="module"></script>
 		<title>Paweł Czarnecki Portfolio</title>
@@ -184,8 +184,8 @@
 					></a>
 				</div>
 				<div class="buttons">
-					<a href="#work" class="primary-button">See My Work</a>
-					<a href="#" class="secondary-button">Download My CV</a>
+					<a aria-label="link to my work section" href="#work" class="primary-button">See My Work</a>
+					<a aria-label="button downloading cv" href="#" class="secondary-button">Download My CV</a>
 				</div>
 			</section>
 			<section class="work" id="work">
@@ -340,55 +340,55 @@
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
-							<img src="./images/skills/html5.svg" alt="" />
+							<img src="./images/skills/html5.svg" height="300px" width="350px" alt="" />
 							<div class="description">HTML</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/css3.svg" alt="" />
+							<img src="./images/skills/css3.svg" height="300px" width="350px" alt="" />
 							<div class="description">CSS</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/sass.svg" alt="" />
+							<img src="./images/skills/sass.svg" height="300px" width="350px" alt="" />
 							<div class="description">SCSS</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/javascript.svg" alt="" />
+							<img src="./images/skills/javascript.svg" height="300px" width="350px" alt="" />
 							<div class="description">JavaScript</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/typescript.svg" alt="" />
+							<img src="./images/skills/typescript.svg" height="300px" width="350px" alt="" />
 							<div class="description">TypeScript</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/react.svg" alt="" />
+							<img src="./images/skills/react.svg" height="300px" width="350px" alt="" />
 							<div class="description">React.js</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/figma.svg" alt="" />
+							<img src="./images/skills/figma.svg" height="300px" width="350px" alt="" />
 							<div class="description">Figma</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/git.svg" alt="" />
+							<img src="./images/skills/git.svg" height="300px" width="350px" alt="" />
 							<div class="description">Git</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/bootstrap.svg" alt="" />
+							<img src="./images/skills/bootstrap.svg" height="300px" width="350px" alt="" />
 							<div class="description">Bootstrap</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/php.svg" alt="" />
+							<img src="./images/skills/php.svg" height="300px" width="350px" alt="" />
 							<div class="description">PHP</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/mysql.svg" alt="" />
+							<img src="./images/skills/mysql.svg" height="300px" width="350px" alt="" />
 							<div class="description">MySQL</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/davinci.svg" alt="" />
+							<img src="./images/skills/davinci.svg" height="300px" width="350px" alt="" />
 							<div class="description">DaVinci Resolve</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="./images/skills/adobe-photoshop.svg" alt="" />
+							<img src="./images/skills/adobe-photoshop.svg" height="300px" width="350px" alt="" />
 							<div class="description">Adobe Photoshop</div>
 						</div>
 					</div>
@@ -471,7 +471,7 @@
 						<p>
 							<span>My Email</span>
 							<span>pawelczarnecki0225@gmail.com</span>
-							<button>Copy</button>
+							<button class="copy-to-clipboard">Copy</button>
 						</p>
 						<p>
 							<span>My Phone</span>
@@ -485,18 +485,18 @@
 			<div class="footer-left">
 				<p>Quick Links</p>
 				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a aria-label="footer link to home" href="#home">Home</a></li>
+					<li><a aria-label="footer link to work" href="#work">Work</a></li>
+					<li><a aria-label="footer link to skills" href="#skills">Skills</a></li>
+					<li><a aria-label="footer link to about" href="#about">About</a></li>
+					<li><a aria-label="footer link to contact" href="#contact">Contact</a></li>
 				</ul>
 			</div>
 			<div class="footer-right">
 				<p>Social Links</p>
 				<ul>
 					<li>
-						<a href="https://github.com/Bawelna0225" target="_blank">
+						<a aria-label="footer link to github" href="https://github.com/Bawelna0225" target="_blank">
 							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
 								<path
 									d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75 5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.38 13.38 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"
@@ -506,7 +506,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://codepen.io/bawelna0225" target="_blank">
+						<a aria-label="footer link to codepen" href="https://codepen.io/bawelna0225" target="_blank">
 							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path d="M21 9v6"></path>
 								<path d="M3 15V9"></path>
@@ -518,7 +518,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://www.linkedin.com/in/pawe%C5%82-czarnecki-76556221b/" target="_blank">
+						<a aria-label="footer link to linkedin" href="https://www.linkedin.com/in/pawe%C5%82-czarnecki-76556221b/" target="_blank">
 							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z"></path>
 								<path d="M7 17v-7"></path>
@@ -529,7 +529,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://dev.to/bawelna0225" target="_blank">
+						<a aria-label="footer link to dev.to" href="https://dev.to/bawelna0225" target="_blank">
 							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 								<title>Dev.to</title>
 								<path
@@ -539,7 +539,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://www.freecodecamp.org/Pawel_Czarnecki" target="_blank">
+						<a aria-label="footer link to freecodecamp" href="https://www.freecodecamp.org/Pawel_Czarnecki" target="_blank">
 							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
 								<title>freeCodeCamp</title>
 								<path
@@ -549,7 +549,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://www.codewars.com/users/Pawe%C5%82%20Czarnecki" target="_blank" aria-label="link to code wars">
+						<a href="https://www.codewars.com/users/Pawe%C5%82%20Czarnecki" target="_blank" aria-label=" footer link to code wars">
 							<svg fill="currentColor" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
 								<title>Code Wars</title>
 								<path
@@ -566,6 +566,6 @@
 				<path d="m6 15 6-6 6 6"></path>
 			</svg>
 		</div>
-		<div class="snackbar">Theme Changed to: <span></span></div>
+		<div class="snackbar"></div>
 	</body>
 </html>

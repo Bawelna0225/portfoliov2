@@ -33,7 +33,7 @@ export const changeTheme = (theme, e) => {
 					localStorage.setItem('currentTheme-secondAccentColor', secondAccentColor)
 
 					clearInterval(snackBarInterval)
-					snackBar.querySelector('span').textContent = `${name}`
+					snackBar.textContent = `Theme Changed to: ${name}`
 					snackBar.classList.add('active')
 					snackBarInterval = setInterval(() => {
 						snackBar.classList.remove('active')
