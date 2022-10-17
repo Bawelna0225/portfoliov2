@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1030,10 +1031,67 @@ footer .footer-left ul li a {
   justify-content: space-around;
 }
 .contact .container form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 15px;
   width: min(100vw - 2rem, 500px);
+  position: relative;
+  pointer-events: all;
+}
+.contact .container form::before, .contact .container form::after {
+  justify-content: center;
+  align-items: center;
+}
+.contact .container form::before {
+  display: none;
+  content: "";
+  z-index: 10px;
+  background-color: var(--primary-color);
+  opacity: 0.6;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  position: absolute;
+  width: 103%;
+  height: 103%;
+  z-index: 10;
+}
+.contact .container form::after {
+  display: none;
+  content: "";
+  z-index: 10px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--accent-color);
+  border-left: none;
+  border-top: none;
+  z-index: 10;
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+}
+.contact .container form.pending {
+  opacity: 1;
+  pointer-events: none;
+}
+.contact .container form.pending::before, .contact .container form.pending::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .container form.success::before {
+  display: flex;
+}
+.contact .container form.success::after {
+  -webkit-animation: none;
+          animation: none;
+  display: flex;
+  color: green;
+  border: 2px solid green;
+  content: "✔";
 }
 .contact .container form:has(.error) {
   gap: 25px;
@@ -1044,7 +1102,7 @@ footer .footer-left ul li a {
 .contact .container form .form-input input,
 .contact .container form .form-input textarea {
   padding: 15px;
-  width: 100%;
+  width: 100% !important;
   border: 1px solid var(--accent-color);
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -1082,7 +1140,8 @@ footer .footer-left ul li a {
   color: red;
   opacity: 0;
 }
-.contact .container form .form-input.error input, .contact .container form .form-input.error textarea {
+.contact .container form .form-input.error input,
+.contact .container form .form-input.error textarea {
   border-color: red;
 }
 .contact .container form .form-input.error label {
@@ -1100,6 +1159,8 @@ footer .footer-left ul li a {
   border: none;
   border-radius: 4px;
   color: white;
+  place-self: center;
+  width: 100%;
   background-image: repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
   transition: 150ms linear;
 }
@@ -1189,6 +1250,22 @@ footer .footer-left ul li a {
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
   }
 }
 @-webkit-keyframes jump {

@@ -405,7 +405,7 @@
 				<div class="container">
 					<form>
 						<div class="form-input">
-							<input type="text" name="firstName" required />
+							<input type="text" name="firstName" id="firstName" />
 							<label for="firstName">First Name</label>
 							<small>
 								<svg width="18" height="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -413,11 +413,11 @@
 									<path d="M12 9v4"></path>
 									<path d="m12 17.011.01-.011"></path>
 								</svg>
-								Invalid Value
+								Field Cannot Be Empty
 							</small>
 						</div>
 						<div class="form-input">
-							<input type="text" name="lastName" required />
+							<input type="text" name="lastName" id="lastName" />
 							<label for="lastName">Last Name</label>
 							<small>
 								<svg width="18" height="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -425,11 +425,11 @@
 									<path d="M12 9v4"></path>
 									<path d="m12 17.011.01-.011"></path>
 								</svg>
-								Invalid Value
+								Field Cannot Be Empty
 							</small>
 						</div>
 						<div class="form-input">
-							<input type="text" name="email" required />
+							<input type="text" name="email" id="email" />
 							<label for="email">Email</label>
 							<small>
 								<svg width="18" height="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -437,11 +437,11 @@
 									<path d="M12 9v4"></path>
 									<path d="m12 17.011.01-.011"></path>
 								</svg>
-								Invalid Value
+								Invalid Email Address
 							</small>
 						</div>
 						<div class="form-input">
-							<input type="text" name="subject" required />
+							<input type="text" name="subject" id="subject" />
 							<label for="subject">Subject</label>
 							<small>
 								<svg width="18" height="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -449,11 +449,11 @@
 									<path d="M12 9v4"></path>
 									<path d="m12 17.011.01-.011"></path>
 								</svg>
-								Invalid Value
+								Field Cannot Be Empty
 							</small>
 						</div>
 						<div class="form-input">
-							<textarea name="message" required></textarea>
+							<textarea name="message" id="message"></textarea>
 							<label for="message">Message</label>
 							<small>
 								<svg width="18" height="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -461,10 +461,10 @@
 									<path d="M12 9v4"></path>
 									<path d="m12 17.011.01-.011"></path>
 								</svg>
-								Invalid Value
+								Field Cannot Be Empty
 							</small>
 						</div>
-						<button>Confirm</button>
+						<button id="submit" type="submit">Confirm</button>
 					</form>
 					<span class="contact-divider">Or</span>
 					<div class="right-panel">

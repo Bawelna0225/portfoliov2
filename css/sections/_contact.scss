@@ -68,10 +68,69 @@
 		align-items: center;
 		justify-content: space-around;
 		form {
-			display: flex;
-			flex-direction: column;
+			display: grid;
 			gap: 15px;
 			width: min(calc(100vw - 2rem), 500px);
+			position: relative;
+			pointer-events: all;
+			&::before,
+			&::after {
+				justify-content: center;
+				align-items: center;
+			}
+			&::before {
+				display: none;
+				content: '';
+				z-index: 10px;
+				background-color: var(--primary-color);
+				opacity: 0.6;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
+				position: absolute;
+				width: 103%;
+				height: 103%;
+				z-index: 10;
+			}
+			&::after {
+				display: none;
+				content: '';
+				z-index: 10px;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
+				border-radius: 50%;
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				border: 2px solid var(--accent-color);
+				border-left: none;
+				border-top: none;
+				z-index: 10;
+				animation: rotate 1s linear infinite;
+			}
+			&.pending {
+				opacity: 1;
+				pointer-events: none;
+				&::before,
+				&::after {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			&.success {
+				&::before {
+					display: flex;
+				}
+				&::after {
+					animation: none;
+					display: flex;
+					color: green;
+					border: 2px solid green;
+					content: '✔';
+				}
+			}
 			&:has(.error) {
 				gap: 25px;
 			}
@@ -80,7 +139,7 @@
 				input,
 				textarea {
 					padding: 15px;
-					width: 100%;
+					width: 100% !important;
 					border: 1px solid var(--accent-color);
 					background-color: var(--primary-color);
 					color: var(--text-color);
@@ -117,7 +176,8 @@
 					opacity: 0;
 				}
 				&.error {
-					input, textarea {
+					input,
+					textarea {
 						border-color: red;
 					}
 					label {
@@ -137,6 +197,8 @@
 				border: none;
 				border-radius: 4px;
 				color: white;
+				place-self: center;
+				width: 100%;
 				background-image: repeating-linear-gradient(135deg, hsla(264, 0%, 88%, 0.03) 0px, hsla(264, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px),
 					repeating-linear-gradient(45deg, hsla(264, 0%, 88%, 0.03) 0px, hsla(264, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px),
 					repeating-linear-gradient(67.5deg, hsla(264, 0%, 88%, 0.03) 0px, hsla(264, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px),
