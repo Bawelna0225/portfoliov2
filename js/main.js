@@ -177,13 +177,13 @@ const validateForm = () => {
 	})
 
 	if (!errorFlag) {
-		// var data = new FormData(document.getElementById('myForm'))
-		// var xhr = new XMLHttpRequest()
-		// xhr.open('POST', 'sendmail.php')
-		// xhr.onload = function () {
-		// 	console.log(this.response)
-		// }
-		// xhr.send(data)
+		var data = new FormData(document.querySelector('form'))
+		var xhr = new XMLHttpRequest()
+		xhr.open('POST', 'sendmail.php')
+		xhr.onload = function () {
+			console.log(this.response)
+		}
+		xhr.send(data)
 
 		contactForm.classList.add('pending')
 		document.querySelector('form').submit.click()
