@@ -130,7 +130,10 @@
 			button {
 				background-color: var(--navbar-color);
 				color: var(--text-color);
-				border: 1px solid var(--accent-color);
+				box-shadow: 0px 0px 5px var(--shadow-color);
+				border: 1px solid;
+				border-image-slice: 1;
+				border-image-source: linear-gradient(to left, var(--accent-color), var(--accent-color2));
 				padding: 5px;
 				z-index: 2;
 				left: 10px;
@@ -146,25 +149,22 @@
 		align-items: center;
 		justify-content: center;
 		display: none;
-		animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+		animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 		&.active {
 			display: flex;
 			opacity: 1;
 			transform: translateX(0%);
 			.description {
-				animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+				animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 			}
 			.preview {
-				animation: fade-in .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-				
+				animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 			}
 		}
 		ul {
 			list-style: none;
 		}
 		.description {
-				// transition: 300ms ease-in-out;
-
 			border-radius: 4px;
 			background-color: var(--navbar-color);
 			display: flex;
@@ -223,6 +223,7 @@
 		.preview {
 			height: 500px;
 			position: relative;
+			box-shadow: 0px 0px 5px var(--shadow-color);
 			img {
 				border-radius: 4px;
 				user-select: none;

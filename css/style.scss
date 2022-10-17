@@ -60,7 +60,10 @@ section {
 	background-color: var(--navbar-color);
 	backdrop-filter: blur(4px);
 	transition: 200ms linear;
-	box-shadow: 0px 0px 1px var(--accent-color);
+	border: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
+	box-shadow: 0px 0px 10px var(--shadow-color);
 	&:hover {
 		animation: jump 0.5s ease-in-out infinite both;
 	}

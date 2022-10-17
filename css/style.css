@@ -87,7 +87,10 @@ section {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   transition: 200ms linear;
-  box-shadow: 0px 0px 1px var(--accent-color);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
+  box-shadow: 0px 0px 10px var(--shadow-color);
 }
 .back-to-top:hover {
   -webkit-animation: jump 0.5s ease-in-out infinite both;
@@ -125,6 +128,7 @@ header {
   align-items: center;
   padding-inline: 20px;
   z-index: 10;
+  box-shadow: 0px 0px 5px var(--shadow-color);
 }
 header .skip-nav {
   position: absolute;
@@ -303,6 +307,7 @@ header .dropdown-content {
           backdrop-filter: blur(3px);
   z-index: 10;
   transition: translate 300ms linear;
+  box-shadow: 0px 5px 5px var(--shadow-color);
 }
 header .dropdown-content.open {
   transition: translate 700ms cubic-bezier(0.42, 0, 0.11, 1.32);
@@ -530,6 +535,8 @@ header .side-menu.open li:nth-of-type(5) {
 }
 
 footer {
+  border-top: 1px solid var(--accent-color);
+  box-shadow: 0px 0px 10px var(--shadow-color);
   margin-top: 20px;
   min-height: 200px;
   background-color: var(--navbar-color);
@@ -718,6 +725,7 @@ footer .footer-left ul li a {
   border: solid 2px transparent;
   cursor: pointer;
   transition: box-shadow 200ms linear;
+  box-shadow: 0px 0px 5px var(--shadow-color);
 }
 .home .buttons a::before {
   content: "";
@@ -787,7 +795,10 @@ footer .footer-left ul li a {
 .work .projects .buttons button {
   background-color: var(--navbar-color);
   color: var(--text-color);
-  border: 1px solid var(--accent-color);
+  box-shadow: 0px 0px 5px var(--shadow-color);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, var(--accent-color), var(--accent-color2));
   padding: 5px;
   z-index: 2;
   left: 10px;
@@ -879,6 +890,7 @@ footer .footer-left ul li a {
 .work .project .preview {
   height: 500px;
   position: relative;
+  box-shadow: 0px 0px 5px var(--shadow-color);
 }
 .work .project .preview img {
   border-radius: 4px;
@@ -1102,6 +1114,7 @@ footer .footer-left ul li a {
 .contact .container form .form-input input,
 .contact .container form .form-input textarea {
   padding: 15px;
+  box-shadow: 0px 0px 5px var(--shadow-color);
   width: 100% !important;
   border: 1px solid var(--accent-color);
   background-color: var(--primary-color);
@@ -1161,6 +1174,7 @@ footer .footer-left ul li a {
   color: white;
   place-self: center;
   width: 100%;
+  box-shadow: 0px 0px 5px var(--shadow-color);
   background-image: repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
   transition: 150ms linear;
 }
@@ -1196,6 +1210,8 @@ footer .footer-left ul li a {
   padding: 15px 15px 15px 15px;
   border: 1px solid var(--accent-color);
   position: relative;
+  box-shadow: 0px 0px 5px var(--shadow-color);
+  background-color: var(--primary-color);
 }
 .contact .container .right-panel p button {
   display: block;
@@ -1205,6 +1221,7 @@ footer .footer-left ul li a {
   border-radius: 4px;
   border: none;
   color: white;
+  box-shadow: 0px 0px 10px var(--shadow-color);
   background-image: repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(264deg, 0%, 88%, 0.03) 0px, hsla(264deg, 0%, 88%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
 }
 .contact .container .right-panel p button:active {
@@ -1454,6 +1471,7 @@ footer .footer-left ul li a {
   header {
     height: 60px;
     background-color: transparent;
+    box-shadow: 0px 0px 0px var(--shadow-color);
   }
   header .logo {
     z-index: 20;
@@ -1465,6 +1483,7 @@ footer .footer-left ul li a {
     left: 0;
     padding-left: 1rem;
     position: fixed;
+    box-shadow: 0px 0px 5px var(--shadow-color);
   }
   header::before {
     position: absolute;
@@ -1487,6 +1506,7 @@ footer .footer-left ul li a {
     right: 0;
     padding-inline: 0.5rem;
     overflow: visible;
+    box-shadow: 0px 0px 5px var(--shadow-color);
   }
   header nav ul li {
     display: flex;
