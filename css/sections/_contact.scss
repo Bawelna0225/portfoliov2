@@ -70,8 +70,11 @@
 		form {
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 15px;
 			width: min(calc(100vw - 2rem), 500px);
+			&:has(.error) {
+				gap: 25px;
+			}
 			.form-input {
 				position: relative;
 				input,
@@ -100,6 +103,33 @@
 					position: absolute;
 					background-color: var(--primary-color);
 					left: 15px;
+				}
+				small {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 5px;
+					position: absolute;
+					right: 0;
+					bottom: -20px;
+					font-size: 0.8rem;
+					color: red;
+					opacity: 0;
+				}
+				&.error {
+					input, textarea {
+						border-color: red;
+					}
+					label {
+						color: red;
+					}
+					small {
+						opacity: 1;
+						position: absolute;
+						right: 0;
+						bottom: -20px;
+						font-size: 0.8rem;
+					}
 				}
 			}
 			button {

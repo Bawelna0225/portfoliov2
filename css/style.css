@@ -1032,8 +1032,11 @@ footer .footer-left ul li a {
 .contact .container form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   width: min(100vw - 2rem, 500px);
+}
+.contact .container form:has(.error) {
+  gap: 25px;
 }
 .contact .container form .form-input {
   position: relative;
@@ -1066,6 +1069,31 @@ footer .footer-left ul li a {
   position: absolute;
   background-color: var(--primary-color);
   left: 15px;
+}
+.contact .container form .form-input small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  font-size: 0.8rem;
+  color: red;
+  opacity: 0;
+}
+.contact .container form .form-input.error input, .contact .container form .form-input.error textarea {
+  border-color: red;
+}
+.contact .container form .form-input.error label {
+  color: red;
+}
+.contact .container form .form-input.error small {
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  font-size: 0.8rem;
 }
 .contact .container form button {
   padding: 15px;
