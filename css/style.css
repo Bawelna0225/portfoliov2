@@ -26,6 +26,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   cursor: none;
+  font-size: 18px;
 }
 
 :root {
@@ -366,8 +367,10 @@ header .dropdown-content .dropdown-items .dropdown-item .theme-description {
   width: 100%;
   background-color: var(--navbar-color);
   pointer-events: none;
+  font-size: 0.8rem;
 }
 header .dropdown-content .dropdown-items .dropdown-item.active::before {
+  font-size: 0.8rem;
   content: "Active";
   position: absolute;
   display: flex;
@@ -525,6 +528,48 @@ header .side-menu.open li:nth-of-type(5) {
   opacity: 0;
 }
 
+footer {
+  margin-top: 20px;
+  min-height: 200px;
+  background-color: var(--navbar-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer p {
+  color: var(--accent-color);
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+}
+footer ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+footer ul li a svg {
+  height: 35px;
+}
+footer ul li:nth-child(4) {
+  padding-inline: 3px;
+}
+footer ul li:nth-child(5) {
+  padding-inline: 3px;
+}
+footer ul li:nth-child(6) {
+  padding-inline: 3px;
+}
+footer ul li:hover a {
+  color: var(--accent-color);
+}
+footer .footer-left ul {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-left ul li a {
+  font-size: 0.9rem;
+}
+
 .home {
   width: min(100vw - 2rem, 1500px);
   height: 100vh;
@@ -623,6 +668,7 @@ header .side-menu.open li:nth-of-type(5) {
   translate: 0% -20%;
 }
 .home h2 span {
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
   color: var(--accent-color);
   font-weight: 900;
 }
@@ -955,6 +1001,10 @@ header .side-menu.open li:nth-of-type(5) {
 .contact {
   display: grid;
   position: relative;
+  min-height: 100vh !important;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .contact::before {
   content: "";
@@ -1422,5 +1472,17 @@ header nav .themes-btn .icon rect {
   }
   .work .project .preview img {
     height: 30vh;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  footer .footer-left ul li a {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

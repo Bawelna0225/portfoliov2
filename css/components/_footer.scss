@@ -1,0 +1,41 @@
+footer {
+	margin-top: 20px;
+	min-height: 200px;
+	background-color: var(--navbar-color);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    p {
+        color: var(--accent-color);
+    }
+	ul {
+		list-style-type: none;
+		display: flex;
+		li {
+			a {
+				text-decoration: none;
+				color: var(--text-color);
+				svg {
+					height: 35px;
+				}
+			}
+
+			@for $i from 4 through 6 {
+				&:nth-child(#{$i}) {
+					padding-inline: 3px;
+				}
+			}
+			&:hover a {
+				color: var(--accent-color);
+			}
+		}
+	}
+	.footer-left ul {
+		display: flex;
+		flex-direction: column;
+        li a{
+            font-size: 0.9rem;
+
+        }
+	}
+}

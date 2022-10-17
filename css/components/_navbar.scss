@@ -184,7 +184,6 @@ header {
 		margin: 0 auto;
 		translate: 120% 0%;
 		background-color: var(--navbar-color);
-		// transition: 500ms cubic-bezier(0, 0, 0.54, 1.32);
 		backdrop-filter: blur(3px);
 		z-index: 10;
 		transition: translate 300ms linear;
@@ -206,7 +205,6 @@ header {
 		}
 		p {
 			font-size: 1.3rem;
-			// backdrop-filter: blur(8px);
 			padding: 10px;
 			padding-block: 20px;
 			span {
@@ -250,8 +248,10 @@ header {
 					width: 100%;
 					background-color: var(--navbar-color);
 					pointer-events: none;
+					font-size: 0.8rem;
 				}
 				&.active::before {
+					font-size: 0.8rem;
 					content: 'Active';
 					position: absolute;
 					display: flex;
