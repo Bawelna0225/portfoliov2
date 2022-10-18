@@ -2,6 +2,9 @@
 	header {
 		backdrop-filter: blur(8px);
 	}
+	.about .container div a {
+		max-width: 250px;
+	}
 }
 @media (max-width: 1152px) {
 	nav ul li {
@@ -203,6 +206,19 @@
 				height: auto;
 				img {
 					height: 30vh;
+				}
+			}
+		}
+	}
+	.about {
+		.container {
+			div {
+				flex-direction: column;
+				justify-content: start;
+				align-items: start;
+				width: 100% !important;
+				a {
+					width: 100%;
 				}
 			}
 		}

@@ -1044,7 +1044,6 @@ footer .footer-left ul li a {
   flex: 1;
   text-decoration: none;
   padding: 10px 0px;
-  max-width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1487,6 +1486,9 @@ footer .footer-left ul li a {
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
   }
+  .about .container div a {
+    max-width: 250px;
+  }
 }
 @media (max-width: 1152px) {
   nav ul li {
@@ -1680,6 +1682,15 @@ header nav .themes-btn .icon rect {
   }
   .work .project .preview img {
     height: 30vh;
+  }
+  .about .container div {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100% !important;
+  }
+  .about .container div a {
+    width: 100%;
   }
   footer {
     flex-direction: column;
