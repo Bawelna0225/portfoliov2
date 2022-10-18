@@ -146,10 +146,10 @@
 					background-color: var(--primary-color);
 					color: var(--text-color);
 					&:focus ~ label {
-						transform: translateY(-50%);
+						transform: translateY(-45%);
 					}
 					&:valid ~ label {
-						transform: translateY(-50%);
+						transform: translateY(-45%);
 					}
 				}
 				textarea {
@@ -160,7 +160,7 @@
 					pointer-events: none;
 					font-size: 0.9rem;
 					transition: transform 200ms linear;
-					padding: 2px;
+					padding: 0px 2px;
 					position: absolute;
 					background-color: var(--primary-color);
 					left: 15px;
@@ -174,16 +174,16 @@
 					right: 0;
 					bottom: -20px;
 					font-size: 0.8rem;
-					color: red;
+					color: rgb(249, 72, 72);
 					opacity: 0;
 				}
 				&.error {
 					input,
 					textarea {
-						border-color: red;
+						border-color: rgb(249, 72, 72);
 					}
 					label {
-						color: red;
+						color: rgb(249, 72, 72);
 					}
 					small {
 						opacity: 1;

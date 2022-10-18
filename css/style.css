@@ -50,6 +50,7 @@ body {
 
 section {
   min-height: 100vh;
+  padding-block: 40px;
 }
 
 #cursor {
@@ -840,13 +841,13 @@ footer .footer-left ul li a {
   justify-content: center;
   flex-direction: column;
   border: 1px solid var(--accent-color);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
   padding: 20px;
   width: 605px;
   margin-right: -80px;
   z-index: 1;
   box-shadow: 0px 0px 10px var(--accent-color);
+  -webkit-backdrop-filter: blur(8px) !important;
+          backdrop-filter: blur(8px) !important;
 }
 .work .project .description svg {
   stroke: var(--text-color);
@@ -855,7 +856,7 @@ footer .footer-left ul li a {
   transition: 150ms linear;
 }
 .work .project .description .project-title {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.3rem, 2.3vw, 2.3rem);
   color: var(--accent-color);
 }
 .work .project .description .project-info ul li svg {
@@ -866,16 +867,16 @@ footer .footer-left ul li a {
 .work .project .description .project-links {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
 }
 .work .project .description .project-info p,
 .work .project .description .project-links p {
-  font-size: clamp(1rem, 1vw, 1.4rem);
+  font-size: clamp(0.9rem, 1vw, 1.4rem);
 }
 .work .project .description .project-info ul,
 .work .project .description .project-links ul {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 .work .project .description .project-info ul li,
 .work .project .description .project-links ul li {
@@ -995,7 +996,9 @@ footer .footer-left ul li a {
 
 .about {
   display: grid;
+  place-content: center;
   position: relative;
+  min-height: 100vh;
 }
 .about::before {
   content: "";
@@ -1009,6 +1012,27 @@ footer .footer-left ul li a {
           clip-path: polygon(100% 40%, 50% 100%, 100% 100%);
   z-index: -1;
   background-image: repeating-linear-gradient(135deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(210deg, 79%, 75%, 0.05) 0px, hsla(210deg, 79%, 75%, 0.05) 1px, transparent 1px, transparent 11px, hsla(210deg, 79%, 75%, 0.05) 11px, hsla(210deg, 79%, 75%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, var(--accent-color), var(--accent-color2));
+}
+.about .container {
+  width: min(100% - 2rem, 1600px);
+  margin: 0 auto;
+}
+.about .container p {
+  max-width: 1100px;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  margin-bottom: 20px;
+}
+.about .container .title {
+  margin-bottom: 0px;
+  background-image: linear-gradient(90deg, var(--accent-color2), var(--accent-color));
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+  text-shadow: 0px 0px 10px var(--shadow-color);
 }
 
 .contact {
@@ -1122,11 +1146,11 @@ footer .footer-left ul li a {
 }
 .contact .container form .form-input input:focus ~ label,
 .contact .container form .form-input textarea:focus ~ label {
-  transform: translateY(-50%);
+  transform: translateY(-45%);
 }
 .contact .container form .form-input input:valid ~ label,
 .contact .container form .form-input textarea:valid ~ label {
-  transform: translateY(-50%);
+  transform: translateY(-45%);
 }
 .contact .container form .form-input textarea {
   resize: none;
@@ -1136,7 +1160,7 @@ footer .footer-left ul li a {
   pointer-events: none;
   font-size: 0.9rem;
   transition: transform 200ms linear;
-  padding: 2px;
+  padding: 0px 2px;
   position: absolute;
   background-color: var(--primary-color);
   left: 15px;
@@ -1150,15 +1174,15 @@ footer .footer-left ul li a {
   right: 0;
   bottom: -20px;
   font-size: 0.8rem;
-  color: red;
+  color: rgb(249, 72, 72);
   opacity: 0;
 }
 .contact .container form .form-input.error input,
 .contact .container form .form-input.error textarea {
-  border-color: red;
+  border-color: rgb(249, 72, 72);
 }
 .contact .container form .form-input.error label {
-  color: red;
+  color: rgb(249, 72, 72);
 }
 .contact .container form .form-input.error small {
   opacity: 1;
