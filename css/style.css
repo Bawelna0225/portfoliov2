@@ -1034,6 +1034,65 @@ footer .footer-left ul li a {
   font-size: clamp(1.2rem, 2.2vw, 2.2rem);
   text-shadow: 0px 0px 10px var(--shadow-color);
 }
+.about .container div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.about .container div a {
+  flex: 1;
+  text-decoration: none;
+  padding: 10px 0px;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-style: solid;
+  border-width: 1;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, var(--accent-color2), var(--accent-color));
+  transition: 500ms ease-in-out;
+  position: relative;
+  color: currentColor;
+}
+.about .container div a svg {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 35px;
+  opacity: 0;
+  transition: 300ms linear;
+}
+.about .container div a::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, var(--accent-color2), var(--accent-color));
+  top: 0%;
+  left: 0%;
+  scale: 0 1;
+  transition: 300ms linear;
+  transform-origin: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: -1;
+}
+.about .container div a:hover {
+  background-color: transparent;
+  color: white;
+}
+.about .container div a:hover svg {
+  opacity: 1;
+  transition-delay: 300ms;
+}
+.about .container div a:hover::before {
+  scale: 1 1;
+}
 
 .contact {
   display: grid;
