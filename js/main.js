@@ -88,7 +88,22 @@ window.addEventListener('keydown', (e) => {
 // Theme switcher
 const themesContainer = document.querySelector('.dropdown-items')
 
-import { createTheme } from './modules/createTheme.js'
+const createTheme = (id, name) => {
+	const dropdownItem = document.createElement('button')
+	dropdownItem.classList.add('dropdown-item')
+	dropdownItem.setAttribute('data-theme-id', id)
+
+	const themeDescription = document.createElement('div')
+	themeDescription.classList.add('theme-description')
+	themeDescription.innerHTML = `Theme: <br/> ${name}`
+
+	dropdownItem.appendChild(themeDescription)
+
+	dropdownItem.addEventListener('click', (e) => {
+		changeTheme(id, e)
+	})
+	return dropdownItem
+}
 // initial fetch to create themes
 fetch('../js/themes.json')
 	.then((response) => response.json())
@@ -105,12 +120,78 @@ fetch('../js/themes.json')
 			themesContainer.appendChild(theme)
 		})
 	})
+const snackBar = document.querySelector('.snackbar')
+
+let snackBarInterval
+
+const changeTheme = (theme, e) => {
+	;[...document.querySelectorAll('.dropdown-item')].filter((theme) => {
+		theme.classList.remove('active')
+	})
+	// fetching to change page colors
+	fetch('../js/themes.json')
+		.then((response) => response.json())
+		.then((data) => {
+			data.filter((data) => {
+				const {
+					name,
+					id,
+					colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
+				} = data
+				if (id === theme) {
+					root.style.setProperty('--navbar-color', navbarColor)
+					root.style.setProperty('--primary-color', primaryColor)
+					root.style.setProperty('--text-color', textColor)
+					root.style.setProperty('--shadow-color', shadowColor)
+					root.style.setProperty('--accent-color', firstAccentColor)
+					root.style.setProperty('--accent-color2', secondAccentColor)
+
+					localStorage.setItem('currentTheme-id', id)
+					localStorage.setItem('currentTheme-navbarColor', navbarColor)
+					localStorage.setItem('currentTheme-primaryColor', primaryColor)
+					localStorage.setItem('currentTheme-textColor', textColor)
+					localStorage.setItem('currentTheme-shadowColor', shadowColor)
+					localStorage.setItem('currentTheme-firstAccentColor', firstAccentColor)
+					localStorage.setItem('currentTheme-secondAccentColor', secondAccentColor)
+
+					clearInterval(snackBarInterval)
+					snackBar.textContent = `Theme Changed to: ${name}`
+					snackBar.classList.add('active')
+					snackBarInterval = setInterval(() => {
+						snackBar.classList.remove('active')
+					}, 3000)
+				}
+				e.target.classList.add('active')
+			})
+		})
+		.catch((error) => console.log(`%cERROR! ${error}`, 'color: red; font-size: 18px'))
+}
 // My Work Section Slider
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 
-import { showNextProject } from '../js/modules/workSlider.js'
-import { showPrevProject } from '../js/modules/workSlider.js'
+const projects = [...document.querySelectorAll('.project')]
+
+const showPrevProject = () => {
+	const currentShownProject = document.querySelector('.project.active')
+	currentShownProject.classList.remove('active')
+	if (currentShownProject.previousElementSibling) {
+		currentShownProject.previousElementSibling.classList.add('active')
+	} else {
+		projects[projects.length - 1].classList.add('active')
+	}
+}
+
+const showNextProject = () => {
+	const currentShownProject = document.querySelector('.project.active')
+	currentShownProject.classList.remove('active')
+	if (currentShownProject.nextElementSibling) {
+		currentShownProject.nextElementSibling.classList.add('active')
+	} else {
+		projects[0].classList.add('active')
+	}
+}
+
 
 prevBtn.addEventListener('click', () => {
 	showPrevProject()
@@ -119,7 +200,37 @@ nextBtn.addEventListener('click', () => {
 	showNextProject()
 })
 // Skill Swiper
-import { swiper } from './modules/skillSwiper.js'
+export const swiper = new Swiper('.swiper', {
+	direction: 'horizontal',
+	loop: false,
+	centeredSlides: false,
+	slidesPerView: 1.1,
+	spaceBetween: 20,
+	pagination: {
+		el: '.swiper-pagination',
+		dynamicBullets: false,
+	},
+	breakpoints: {
+		520: {
+			slidesPerView: 1.4,
+		},
+		640: {
+			slidesPerView: 2.4,
+		},
+		968: {
+			slidesPerView: 3.4,
+		},
+		1300: {
+			slidesPerView: 4.4,
+		},
+	},
+
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+})
 
 //////////////////////////////////////////// Contact Me Form ////////////////////////////////////////////////
 const formInput = document.querySelectorAll('.form-input')
@@ -210,9 +321,7 @@ const copyToClipboard = document.querySelector('.copy-to-clipboard')
 
 copyToClipboard.addEventListener('click', () => {
 	navigator.clipboard.writeText('pawelczarnecki0225@gmail.com').then(function () {
-		const snackBar = document.querySelector('.snackbar')
 
-		let snackBarInterval
 		clearInterval(snackBarInterval)
 		snackBar.textContent = `Copied To Clipboard!`
 		snackBar.classList.add('active')

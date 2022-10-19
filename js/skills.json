@@ -1,67 +1,57 @@
 [
 	{
-		"skillName": "HTML",
-		"imgSrc": "../images/skills/html.png",
-		"imgAlt": "html"
+		"url": "https://bawelna0225.github.io/theme_swithers/using_css_classes/",
+		"name": "theme_swithers",
+		"finished": true
 	},
 	{
-		"skillName": "CSS",
-		"imgSrc": "../images/skills/css.png",
-		"imgAlt": "css"
+		"url": "https://bawelna0225.github.io/shopping-cart/",
+		"name": "shopping site",
+		"finished": true
 	},
 	{
-		"skillName": "SCSS",
-		"imgSrc": "../images/skills/sass.png",
-		"imgAlt": "sass"
+		"url": "https://bawelna0225.github.io/box-shadow/",
+		"name": "box shadow generator",
+		"finished": true
 	},
 	{
-		"skillName": "JavaScript",
-		"imgSrc": "../images/skills/js.png",
-		"imgAlt": "javascript"
+		"url": "https://bawelna0225.github.io/customize-background/",
+		"name": "customizable background",
+		"finished": true
 	},
 	{
-		"skillName": "TypeScript",
-		"imgSrc": "../images/skills/ts.png",
-		"imgAlt": "typescript"
+		"url": "https://bawelna0225.github.io/music-player/",
+		"name": "music player",
+		"finished": false
 	},
 	{
-		"skillName": "React.js",
-		"imgSrc": "../images/skills/react.png",
-		"imgAlt": "react"
+		"url": "https://bawelna0225.github.io/video-player/",
+		"name": "custom video player",
+		"finished": true
 	},
 	{
-		"skillName": "Git",
-		"imgSrc": "../images/skills/git.png",
-		"imgAlt": "git"
+		"url": "https://bawelna0225.github.io/checkers/",
+		"name": "checkers game",
+		"finished": true
 	},
 	{
-		"skillName": "Bootstrap",
-		"imgSrc": "../images/skills/bootstrap.png",
-		"imgAlt": "Bootstrap"
+		"url": "https://bawelna0225.github.io/color-picker/",
+		"name": "color generator",
+		"finished": true
 	},
 	{
-		"skillName": "Figma",
-		"imgSrc": "../images/skills/figma.png",
-		"imgAlt": "Figma"
+		"url": "https://mellow-elf-174dbf.netlify.app/",
+		"name": "E-commerce site in react",
+		"finished": false
 	},
 	{
-		"skillName": "PHP",
-		"imgSrc": "../images/skills/php.png",
-		"imgAlt": "PHP"
+		"url": "https://pc-weather-app.netlify.app/",
+		"name": "weather app",
+		"finished": true
 	},
 	{
-		"skillName": "MySQL",
-		"imgSrc": "../images/skills/sql.png",
-		"imgAlt": "MySQL"
-	},
-	{
-		"skillName": "DaVinci Resolve",
-		"imgSrc": "../images/skills/davinci.png",
-		"imgAlt": "DaVinci Resolve"
-	},
-	{
-		"skillName": "Adobe PhotoShop",
-		"imgSrc": "../images/skills/photoshop.png",
-		"imgAlt": "Adobe PhotoShop"
+		"url": "https://cp-react-movies-app.netlify.app/",
+		"name": "movies app in react",
+		"finished": true
 	}
 ]
