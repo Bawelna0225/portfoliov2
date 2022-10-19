@@ -13,8 +13,8 @@
 		top: 20%;
 		left: 50%;
 		translate: -50% 0;
-		width: min(calc(100% - 2rem), 600px);
-		font-size: clamp(1rem, 2vw, 2rem);
+		width: min(calc(100% - 2rem), 900px);
+		font-size: clamp(1rem, 1.8vw, 1.8rem);
 		text-align: center;
 		transition: opacity 300ms linear;
 		span {

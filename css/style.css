@@ -483,8 +483,8 @@ header .side-menu.open li:nth-of-type(5) {
   top: 20%;
   left: 50%;
   translate: -50% 0;
-  width: min(100% - 2rem, 600px);
-  font-size: clamp(1rem, 2vw, 2rem);
+  width: min(100% - 2rem, 900px);
+  font-size: clamp(1rem, 1.8vw, 1.8rem);
   text-align: center;
   transition: opacity 300ms linear;
 }
