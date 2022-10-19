@@ -102,6 +102,7 @@ section {
 }
 
 .snackbar {
+  z-index: 10;
   position: fixed;
   left: 50%;
   bottom: -50px;
