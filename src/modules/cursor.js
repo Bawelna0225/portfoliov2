@@ -8,12 +8,12 @@ let	mouseY = 0
 let cursorCircles
 let cursorHistory = Array(TAIL_LENGTH).fill({ x: 0, y: 0 })
 
-function onMouseMove(event) {
+export function onMouseMove(event) {
 	mouseX = event.clientX
 	mouseY = event.clientY
 }
 
-function createCursor() {
+export function createCursor() {
 	for (let i = 0; i < TAIL_LENGTH; i++) {
 		let div = document.createElement('div')
 		div.classList.add('cursor-circle')
@@ -22,7 +22,7 @@ function createCursor() {
 	cursorCircles = [...document.querySelectorAll('.cursor-circle')]
 }
 
-function updateCursor() {
+export function updateCursor() {
 	cursorHistory.shift()
 	cursorHistory.push({ x: mouseX, y: mouseY })
 
@@ -40,7 +40,3 @@ function updateCursor() {
 	requestAnimationFrame(updateCursor)
 }
 
-document.addEventListener('mousemove', onMouseMove, false)
-
-createCursor()
-updateCursor()
