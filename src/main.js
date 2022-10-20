@@ -34,7 +34,11 @@ document.addEventListener('mousemove', onMouseMove, false)
 
 createCursor()
 updateCursor()
-
+// Intersection observer
+const sections = [...document.querySelectorAll('section')]
+sections.forEach(section => {
+	observer.observe(section)
+})
 // back to top button
 const backToTop = document.querySelector('.back-to-top')
 backToTop.addEventListener('click', () => {
@@ -144,6 +148,7 @@ contactForm.onsubmit = (e) => {
 
 const copyToClipboardBtn = document.querySelector('.copy-to-clipboard')
 import { copyToClipboard } from './modules/copyToClipboard'
+import { observer } from './modules/intersectionObserver'
 
 copyToClipboardBtn.addEventListener('click', () => {
     copyToClipboard()
