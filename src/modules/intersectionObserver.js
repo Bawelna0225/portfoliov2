@@ -1,7 +1,7 @@
 export const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry) => {
-			entry.target.classList.toggle('active', entry.isIntersecting)
+			entry.target.classList.toggle('shown', entry.isIntersecting)
 			if (entry.isIntersecting) observer.unobserve(entry.target)
 		})
 	},

@@ -127,6 +127,9 @@
 			display: flex;
 			flex-direction: column;
 			gap: 20px;
+			translate: -50%;
+			opacity: 0 !important;
+			transition: 300ms linear;
 			button {
 				background-color: var(--navbar-color);
 				color: var(--text-color);
@@ -178,6 +181,8 @@
 			z-index: 1;
 			box-shadow: 0px 0px 10px var(--accent-color);
 			backdrop-filter: blur(8px) !important;
+			translate: -110%;
+			opacity: 0 !important;
 			svg {
 				stroke: var(--text-color);
 				fill: none;
@@ -187,6 +192,8 @@
 			.project-title {
 				font-size: clamp(1.3rem, 2.3vw, 2.3rem);
 				color: var(--accent-color);
+				translate: 0% -100%;
+				opacity: 0;
 			}
 			.project-info {
 				ul li svg {
@@ -199,6 +206,8 @@
 				display: flex;
 				flex-direction: column;
 				gap: 2px;
+				translate: 0% -60%;
+				opacity: 0;
 				p {
 					font-size: clamp(0.9rem, 1vw, 1.4rem);
 				}
@@ -224,6 +233,9 @@
 			height: 500px;
 			position: relative;
 			box-shadow: 0px 0px 5px var(--shadow-color);
+			transition: 300ms linear;
+			translate: 50%;
+			opacity: 0 !important;
 			img {
 				border-radius: 4px;
 				user-select: none;
@@ -233,6 +245,42 @@
 				object-fit: cover;
 				border: 2px solid var(--accent-color);
 			}
+		}
+	}
+	&.shown {
+		* {
+			transition: translate 600ms ease-in-out, opacity 800ms linear;
+		}
+		.project {
+			.preview {
+				opacity: 1 !important;
+				translate: 0%;
+			}
+			.description {
+				opacity: 1 !important;
+				translate: 0%;
+				transition-delay: 300ms !important;
+				.project-title {
+					translate: 0% 0%;
+					transition-delay: 900ms !important;
+					opacity: 1;
+				}
+				.project-info {
+					translate: 0% 0%;
+					transition-delay: 1600ms !important;
+					opacity: 1;
+				}
+				.project-links {
+					translate: 0% 0%;
+					transition-delay: 2000ms !important;
+					opacity: 1;
+				}
+			}
+		}
+		.buttons {
+			opacity: 1 !important;
+			translate: 0%;
+			transition-delay: 2300ms !important;
 		}
 	}
 }
