@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
 		setTimeout(() => {
 			document.querySelector('#home').classList.add('active')
 		}, 800)
-	}, 100)
+	}, 3000)
 })
 // Cursor
 import { createCursor, updateCursor, onMouseMove } from './modules/cursor'

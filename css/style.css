@@ -876,7 +876,7 @@ footer .footer-left ul li a {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  translate: 0% -60%;
+  translate: 0% -30%;
   opacity: 0;
 }
 .work .project .description .project-info p,
@@ -940,11 +940,13 @@ footer .footer-left ul li a {
   translate: 0% 0%;
   transition-delay: 1600ms !important;
   opacity: 1;
+  transition: translate 300ms ease-in-out, opacity 800ms linear;
 }
 .work.shown .project .description .project-links {
   translate: 0% 0%;
   transition-delay: 2000ms !important;
   opacity: 1;
+  transition: translate 300ms ease-in-out, opacity 800ms linear;
 }
 .work.shown .buttons {
   opacity: 1 !important;
