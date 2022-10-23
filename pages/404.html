@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>404 - Page not found</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: 'Poppins', sans-serif;
+			}
+
+			body {
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+				background-color: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			:root {
+				--multiplier: 2.82;
+			}
+
+			.content-404 {
+				overflow: hidden;
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				flex-direction: column;
+			}
+			.content-404 .text-404 {
+				position: relative;
+				color: #fff;
+				font-weight: 700;
+				font-size: calc(70px * var(--multiplier));
+				transform: scale(2);
+				padding: 30px;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				pointer-events: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.content-404 .text-404::before,
+			.content-404 .text-404::after {
+				padding: 30px;
+				color: white;
+				content: attr(data-text);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: black;
+				overflow: hidden;
+				top: 0;
+			}
+			.content-404 .text-404::before {
+				left: calc(3px * var(--multiplier));
+				text-shadow: calc(-2px * var(--multiplier)) 0 red;
+				animation: glitch-1 2.5s linear infinite reverse;
+			}
+			.content-404 .text-404::after {
+				left: calc(-3px * var(--multiplier));
+				text-shadow: calc(-2px * var(--multiplier)) 0 blue;
+				animation: glitch-2 2.5s linear infinite reverse;
+			}
+			.content-404 .message-box {
+				width: min(100% - 3.2rem, 760px);
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				margin-inline: auto;
+				gap: 20px;
+				z-index: 10;
+			}
+			.content-404 .message-box p {
+				font-size: 1.8rem;
+			}
+			.content-404 .message-box .go-back-btn {
+				width: -webkit-max-content;
+				width: -moz-max-content;
+				width: max-content;
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				color: #fff;
+				border: 1px solid #fff;
+				background-color: transparent;
+				position: relative;
+			}
+			.content-404 .message-box .go-back-btn a {
+				color: #fff;
+				text-decoration: none;
+			}
+			.content-404 .message-box .go-back-btn:hover {
+				cursor: pointer;
+			}
+			.content-404 .message-box .go-back-btn::before {
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+			}
+
+			@media (max-width: 692px) {
+				:root {
+					--multiplier: 1.33;
+				}
+			}
+			@-webkit-keyframes text-flicker-in-glow {
+				0% {
+					opacity: 0;
+				}
+				10% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				10.1% {
+					opacity: 1;
+					box-shadow: none;
+				}
+				10.2% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				20% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				20.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+				}
+				20.6% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				30% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				30.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				30.5% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				30.6% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				45% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				45.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				50% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				55% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				55.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				57% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				57.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+				}
+				60% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+				}
+				60.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				65% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				65.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				75% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				75.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				77% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				77.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				85% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				85.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				86% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				86.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				100% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+			}
+			@keyframes text-flicker-in-glow {
+				0% {
+					opacity: 0;
+				}
+				10% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				10.1% {
+					opacity: 1;
+					box-shadow: none;
+				}
+				10.2% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				20% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				20.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+				}
+				20.6% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				30% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				30.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				30.5% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				30.6% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				45% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				45.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				50% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				55% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+				}
+				55.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				57% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				57.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+				}
+				60% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+				}
+				60.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				65% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				65.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				75% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				75.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				77% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				77.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				85% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				85.1% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				86% {
+					opacity: 0;
+					box-shadow: none;
+				}
+				86.1% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+				100% {
+					opacity: 1;
+					box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+				}
+			}
+			@-webkit-keyframes glitch-1 {
+				0% {
+					clip: rect(calc(132px * var(--multiplier)), auto, calc(101px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				5% {
+					clip: rect(calc(17px * var(--multiplier)), auto, calc(94px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				10% {
+					clip: rect(calc(40px * var(--multiplier)), auto, calc(66px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				15% {
+					clip: rect(calc(87px * var(--multiplier)), auto, calc(82px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				20% {
+					clip: rect(calc(137px * var(--multiplier)), auto, calc(61px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				25% {
+					clip: rect(calc(34px * var(--multiplier)), auto, calc(14px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				30% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(74px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				35% {
+					clip: rect(calc(76px * var(--multiplier)), auto, calc(107px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				40% {
+					clip: rect(calc(59px * var(--multiplier)), auto, calc(130px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				45% {
+					clip: rect(calc(29px * var(--multiplier)), auto, calc(84px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				50% {
+					clip: rect(calc(22px * var(--multiplier)), auto, calc(67px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				55% {
+					clip: rect(calc(67px * var(--multiplier)), auto, calc(62px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				60% {
+					clip: rect(calc(10px * var(--multiplier)), auto, calc(105px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				65% {
+					clip: rect(calc(78px * var(--multiplier)), auto, calc(115px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				70% {
+					clip: rect(calc(105px * var(--multiplier)), auto, calc(13px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				75% {
+					clip: rect(calc(15px * var(--multiplier)), auto, calc(75px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				80% {
+					clip: rect(calc(66px * var(--multiplier)), auto, calc(39px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				85% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(73px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				90% {
+					clip: rect(calc(36px * var(--multiplier)), auto, calc(128px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				95% {
+					clip: rect(calc(68px * var(--multiplier)), auto, calc(103px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				100% {
+					clip: rect(calc(14px * var(--multiplier)), auto, calc(100px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+			}
+			@keyframes glitch-1 {
+				0% {
+					clip: rect(calc(132px * var(--multiplier)), auto, calc(101px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				5% {
+					clip: rect(calc(17px * var(--multiplier)), auto, calc(94px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				10% {
+					clip: rect(calc(40px * var(--multiplier)), auto, calc(66px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				15% {
+					clip: rect(calc(87px * var(--multiplier)), auto, calc(82px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				20% {
+					clip: rect(calc(137px * var(--multiplier)), auto, calc(61px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				25% {
+					clip: rect(calc(34px * var(--multiplier)), auto, calc(14px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				30% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(74px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				35% {
+					clip: rect(calc(76px * var(--multiplier)), auto, calc(107px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				40% {
+					clip: rect(calc(59px * var(--multiplier)), auto, calc(130px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				45% {
+					clip: rect(calc(29px * var(--multiplier)), auto, calc(84px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				50% {
+					clip: rect(calc(22px * var(--multiplier)), auto, calc(67px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				55% {
+					clip: rect(calc(67px * var(--multiplier)), auto, calc(62px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				60% {
+					clip: rect(calc(10px * var(--multiplier)), auto, calc(105px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				65% {
+					clip: rect(calc(78px * var(--multiplier)), auto, calc(115px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				70% {
+					clip: rect(calc(105px * var(--multiplier)), auto, calc(13px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				75% {
+					clip: rect(calc(15px * var(--multiplier)), auto, calc(75px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				80% {
+					clip: rect(calc(66px * var(--multiplier)), auto, calc(39px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				85% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(73px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				90% {
+					clip: rect(calc(36px * var(--multiplier)), auto, calc(128px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				95% {
+					clip: rect(calc(68px * var(--multiplier)), auto, calc(103px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				100% {
+					clip: rect(calc(14px * var(--multiplier)), auto, calc(100px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+			}
+			@-webkit-keyframes glitch-2 {
+				0% {
+					clip: rect(calc(129px * var(--multiplier)), auto, calc(36px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				5% {
+					clip: rect(calc(36px * var(--multiplier)), auto, calc(4px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				10% {
+					clip: rect(calc(85px * var(--multiplier)), auto, calc(66px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				15% {
+					clip: rect(calc(91px * var(--multiplier)), auto, calc(91px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				20% {
+					clip: rect(calc(148px * var(--multiplier)), auto, calc(138px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				25% {
+					clip: rect(calc(38px * var(--multiplier)), auto, calc(122px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				30% {
+					clip: rect(calc(69px * var(--multiplier)), auto, calc(54px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				35% {
+					clip: rect(calc(98px * var(--multiplier)), auto, calc(71px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				40% {
+					clip: rect(calc(146px * var(--multiplier)), auto, calc(34px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				45% {
+					clip: rect(calc(134px * var(--multiplier)), auto, calc(43px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				50% {
+					clip: rect(calc(102px * var(--multiplier)), auto, calc(80px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				55% {
+					clip: rect(calc(119px * var(--multiplier)), auto, calc(44px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				60% {
+					clip: rect(calc(106px * var(--multiplier)), auto, calc(99px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				65% {
+					clip: rect(calc(141px * var(--multiplier)), auto, calc(74px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				70% {
+					clip: rect(calc(20px * var(--multiplier)), auto, calc(78px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				75% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(79px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				80% {
+					clip: rect(calc(78px * var(--multiplier)), auto, calc(52px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				85% {
+					clip: rect(calc(35px * var(--multiplier)), auto, calc(39px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				90% {
+					clip: rect(calc(67px * var(--multiplier)), auto, calc(70px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				95% {
+					clip: rect(calc(71px * var(--multiplier)), auto, calc(103px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				100% {
+					clip: rect(calc(83px * var(--multiplier)), auto, calc(40px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+			}
+			@keyframes glitch-2 {
+				0% {
+					clip: rect(calc(129px * var(--multiplier)), auto, calc(36px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				5% {
+					clip: rect(calc(36px * var(--multiplier)), auto, calc(4px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				10% {
+					clip: rect(calc(85px * var(--multiplier)), auto, calc(66px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				15% {
+					clip: rect(calc(91px * var(--multiplier)), auto, calc(91px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				20% {
+					clip: rect(calc(148px * var(--multiplier)), auto, calc(138px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				25% {
+					clip: rect(calc(38px * var(--multiplier)), auto, calc(122px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				30% {
+					clip: rect(calc(69px * var(--multiplier)), auto, calc(54px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				35% {
+					clip: rect(calc(98px * var(--multiplier)), auto, calc(71px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				40% {
+					clip: rect(calc(146px * var(--multiplier)), auto, calc(34px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				45% {
+					clip: rect(calc(134px * var(--multiplier)), auto, calc(43px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				50% {
+					clip: rect(calc(102px * var(--multiplier)), auto, calc(80px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				55% {
+					clip: rect(calc(119px * var(--multiplier)), auto, calc(44px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				60% {
+					clip: rect(calc(106px * var(--multiplier)), auto, calc(99px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				65% {
+					clip: rect(calc(141px * var(--multiplier)), auto, calc(74px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				70% {
+					clip: rect(calc(20px * var(--multiplier)), auto, calc(78px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				75% {
+					clip: rect(calc(133px * var(--multiplier)), auto, calc(79px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				80% {
+					clip: rect(calc(78px * var(--multiplier)), auto, calc(52px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				85% {
+					clip: rect(calc(35px * var(--multiplier)), auto, calc(39px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				90% {
+					clip: rect(calc(67px * var(--multiplier)), auto, calc(70px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				95% {
+					clip: rect(calc(71px * var(--multiplier)), auto, calc(103px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+				100% {
+					clip: rect(calc(83px * var(--multiplier)), auto, calc(40px * var(--multiplier)), calc(30px * var(--multiplier)));
+				}
+			} /*# sourceMappingURL=style404.css.map */
+		</style>
+	</head>
+	<body>
+		<div class="content-404">
+			<h2 class="text-404" data-text="404">404</h2>
+			<div class="message-box">
+				<p>Wha... What?! How did you get here?!</p>
+				<span>Whatever, here I'll help you</span>
+				<button class="go-back-btn"><a href="/">Go Back</a></button>
+			</div>
+		</div>
+	</body>
+</html>
