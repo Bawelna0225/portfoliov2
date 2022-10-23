@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navbar-color: #000000e0;
+    --primary-color: #040510;
+    --accent-color: #12aae1;
+    --accent-color2: #0c4357;
+    --text-color: #f9f9f9;
+    --shadow-color: #01020ea1;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --navbar-color: #ffffffe0;
+    --primary-color: #ffffff;
+    --accent-color: #12aae1;
+    --accent-color2: #0c4357;
+    --text-color: #000000;
+    --shadow-color: #01020e32;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+body {
+  color: var(--text-color);
+  padding-block: 50px;
+  background-color: var(--primary-color);
+}
+
+.transition {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: 300ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1 !important;
+}
+.transition path {
+  stroke: var(--accent-color) !important;
+}
+.transition.is-active {
+  transition: 300ms linear;
+  transform: translateY(0%);
+}
+
+button {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  right: 0;
+  z-index: 10;
+  padding: 8px 10px;
+  background-color: var(--accent-color);
+  border: none;
+  font-weight: 600;
+}
+button a {
+  text-decoration: none;
+  color: var(--elem-color);
+}
+button:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0px auto;
+  /* Container around content */
+  /* Place the container to the left */
+  /* Place the container to the right */
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--accent-color);
+  top: -50px;
+  bottom: -50px;
+  left: 50%;
+  margin-left: -3px;
+}
+.timeline .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  /* The circles on the timeline */
+  /* The actual content */
+}
+.timeline .container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--primary-color);
+  border: 4px solid var(--accent-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.timeline .container .content {
+  padding: 20px 30px;
+  background-color: var(--navbar-color);
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  border: thin solid var(--accent-color);
+}
+.timeline .container .content .date {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.timeline .container .content .date svg {
+  width: 30px;
+  fill: var(--accent-color);
+}
+.timeline .container .content .date h2 {
+  color: var(--accent-color);
+  margin-block: 20px;
+}
+.timeline .container .content p {
+  margin-block: 20px;
+}
+.timeline .container .content p.highlighted {
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 15px var(--accent-color));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 1.2rem;
+}
+.timeline .container .content span {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+.timeline .container .content p:last-of-type {
+  font-size: 0.85rem;
+  margin-block: 10px;
+}
+.timeline .left {
+  left: 0;
+  /* Add arrows to the left container (pointing right) */
+}
+.timeline .left::before {
+  content: " ";
+  height: 15px;
+  width: 15px;
+  rotate: -45deg;
+  background-color: var(--navbar-color);
+  border-right: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  position: absolute;
+  top: 25px;
+  z-index: 1;
+  right: 32px;
+}
+.timeline .right {
+  left: 50%;
+  /* Add arrows to the right container (pointing left) */
+  /* Fix the circle for containers on the right side */
+}
+.timeline .right::after {
+  border-color: var(--accent-color2);
+}
+.timeline .right .content {
+  border: 1px solid var(--accent-color2);
+}
+.timeline .right .content .date svg {
+  fill: var(--accent-color2);
+}
+.timeline .right .content .date h2 {
+  color: var(--accent-color2);
+  margin-block: 20px;
+}
+.timeline .right::before {
+  content: " ";
+  height: 15px;
+  width: 15px;
+  rotate: -45deg;
+  background-color: var(--navbar-color);
+  border-left: 1px solid var(--accent-color2);
+  border-top: 1px solid var(--accent-color2);
+  position: absolute;
+  top: 25px;
+  z-index: 1;
+  left: 32px;
+}
+.timeline .right::after {
+  left: -16px;
+}
+
+@media screen and (max-width: 800px) {
+  /* Place the timeline to the left */
+  .timeline {
+    /* Full-width containers */
+    /* Make sure all circles are at the same spot */
+    /* Make all right containers behave like the left ones */
+  }
+  .timeline .container {
+    width: 100% !important;
+    padding-left: 70px;
+    padding-right: 25px;
+    /* Make sure that all arrows are pointing leftwards */
+  }
+  .timeline .container::before {
+    left: 60px;
+    border: medium solid var(--elem-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--elem-color) transparent transparent;
+  }
+  .timeline .left::after,
+.timeline .right::after {
+    left: 15px;
+  }
+  .timeline .right {
+    left: 0% !important;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+}
+@media screen and (max-width: 470px) {
+  button {
+    top: auto;
+    bottom: 0;
+  }
+  button:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+  }
+  .content .date {
+    gap: 10px !important;
+  }
+  .content .date svg {
+    width: 20px !important;
+  }
+  .content .date h2 {
+    font-size: 1rem;
+    margin-block: 10px !important;
+  }
+  .content p {
+    font-size: 0.9rem;
+  }
+  .content span {
+    font-size: 0.7rem;
+    color: #aaa;
+  }
+  .content p:last-of-type {
+    font-size: 0.85rem;
+    margin-block: 5px;
+  }
+}
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 3708px;
+    stroke-dasharray: 1854px;
+  }
+  100% {
+    stroke-dashoffset: 1854px;
+    stroke-dasharray: 1854px;
+  }
+}
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 3708px;
+    stroke-dasharray: 1854px;
+  }
+  100% {
+    stroke-dashoffset: 1854px;
+    stroke-dasharray: 1854px;
+  }
+}
+.svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+          animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+
+@-webkit-keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 8876.1826171875px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+
+@keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 8876.1826171875px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+.svg-elem-2 {
+  -webkit-animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+          animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+}
+
+@-webkit-keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 8876.1826171875px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+
+@keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 8876.1826171875px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+.svg-elem-3 {
+  -webkit-animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+          animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}/*# sourceMappingURL=timeline.css.map */

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import './../../css/utils/colors';
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins';
+}
+
+body {
+	color: var(--text-color);
+	padding-block: 50px;
+	background-color: var(--primary-color);
+}
+.transition {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--primary-color);
+	z-index: 100;
+	transform: translateY(-100%);
+	transition: 300ms linear;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1 !important;
+	path {
+		stroke: var(--accent-color) !important;
+	}
+	&.is-active {
+		transition: 300ms linear;
+		transform: translateY(0%);
+	}
+}
+button {
+	position: fixed;
+	top: 0;
+	bottom: auto;
+	right: 0;
+	z-index: 10;
+	padding: 8px 10px;
+	background-color: var(--accent-color);
+	border: none;
+	font-weight: 600;
+	a {
+		text-decoration: none;
+		color: var(--elem-color);
+	}
+	&:hover {
+		filter: brightness(0.8);
+		cursor: pointer;
+	}
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 0px auto;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		background-color: var(--accent-color);
+		top: -50px;
+		bottom: -50px;
+		left: 50%;
+		margin-left: -3px;
+	}
+	/* Container around content */
+	.container {
+		padding: 10px 40px;
+		position: relative;
+		background-color: inherit;
+		width: 50%;
+		/* The circles on the timeline */
+		&::after {	
+			content: '';
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			right: -17px;
+			background-color: var(--primary-color);
+			border: 4px solid var(--accent-color);
+			top: 15px;
+			border-radius: 50%;
+			z-index: 1;
+		}
+		/* The actual content */
+		.content {
+			padding: 20px 30px;
+			background-color: var(--navbar-color);
+			position: relative;
+			border-radius: 6px;
+			box-shadow: 0px 0px 10px var(--shadow-color);
+			border: thin solid var(--accent-color);
+			.date {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 20px;
+				svg {
+					width: 30px;
+					fill: var(--accent-color);
+				}
+				h2 {
+					color: var(--accent-color);
+					margin-block: 20px;
+				}
+			}
+			p {
+				margin-block: 20px;
+				&.highlighted {
+					background-color: var(--accent-color);
+					filter: drop-shadow(0px 0px 15px var(--accent-color));
+					background-clip: text;
+					color: transparent;
+					font-size: 1.2rem;
+				}
+			}
+			span {
+				font-size: 0.7rem;
+				color: #aaa;
+			}
+			p:last-of-type {
+				font-size: 0.85rem;
+				margin-block: 10px;
+			}
+		}
+	}
+	/* Place the container to the left */
+	.left {
+		left: 0;
+		/* Add arrows to the left container (pointing right) */
+		&::before {
+			content: ' ';
+			height: 15px;
+			width: 15px;
+			rotate: -45deg;
+			background-color: var(--navbar-color);
+			border-right: 1px solid var(--accent-color);
+			border-bottom: 1px solid var(--accent-color);
+			position: absolute;
+			top: 25px;
+			z-index: 1;
+			right: 32px;
+		}
+	}
+
+	/* Place the container to the right */
+	.right {
+		left: 50%;
+    &::after {
+      border-color: var(--accent-color2);
+    }
+		.content {
+			border: 1px solid var(--accent-color2);
+			.date {
+				svg {
+					fill: var(--accent-color2);
+				}
+				h2 {
+					color: var(--accent-color2);
+					margin-block: 20px;
+				}
+			}
+		}
+		/* Add arrows to the right container (pointing left) */
+		&::before {
+			content: ' ';
+			height: 15px;
+			width: 15px;
+			rotate: -45deg;
+			background-color: var(--navbar-color);
+			border-left: 1px solid var(--accent-color2);
+			border-top: 1px solid var(--accent-color2);
+			position: absolute;
+			top: 25px;
+			z-index: 1;
+			left: 32px;
+		}
+		/* Fix the circle for containers on the right side */
+		&::after {
+			left: -16px;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	/* Place the timeline to the left */
+	.timeline {
+		/* Full-width containers */
+		.container {
+			width: 100% !important;
+			padding-left: 70px;
+			padding-right: 25px;
+			/* Make sure that all arrows are pointing leftwards */
+			&::before {
+				left: 60px;
+				border: medium solid var(--elem-color);
+				border-width: 10px 10px 10px 0;
+				border-color: transparent var(--elem-color) transparent transparent;
+			}
+		}
+		/* Make sure all circles are at the same spot */
+		.left::after,
+		.right::after {
+			left: 15px;
+		}
+
+		/* Make all right containers behave like the left ones */
+		.right {
+			left: 0% !important;
+		}
+		&::after {
+			left: 31px;
+		}
+	}
+}
+
+@media screen and (max-width: 470px) {
+	button {
+		top: auto;
+		bottom: 0;
+		&:hover {
+			filter: brightness(0.8);
+			cursor: pointer;
+		}
+	}
+	.content {
+		.date {
+			gap: 10px !important;
+			svg {
+				width: 20px !important;
+			}
+			h2 {
+				font-size: 1rem;
+				margin-block: 10px !important;
+			}
+		}
+
+		p {
+			font-size: 0.9rem;
+		}
+		span {
+			font-size: 0.7rem;
+			color: #aaa;
+		}
+		p:last-of-type {
+			font-size: 0.85rem;
+			margin-block: 5px;
+		}
+	}
+}
+@keyframes animate-svg-stroke-1 {
+	0% {
+		stroke-dashoffset: 3708px;
+		stroke-dasharray: 1854px;
+	}
+
+	100% {
+		stroke-dashoffset: 1854px;
+		stroke-dasharray: 1854px;
+	}
+}
+
+.svg-elem-1 {
+	animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+
+@keyframes animate-svg-stroke-2 {
+	0% {
+		stroke-dashoffset: 8876.1826171875px;
+		stroke-dasharray: 4438.09130859375px;
+	}
+
+	100% {
+		stroke-dashoffset: 4438.09130859375px;
+		stroke-dasharray: 4438.09130859375px;
+	}
+}
+
+.svg-elem-2 {
+	animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+}
+
+@keyframes animate-svg-stroke-3 {
+	0% {
+		stroke-dashoffset: 8876.1826171875px;
+		stroke-dasharray: 4438.09130859375px;
+	}
+
+	100% {
+		stroke-dashoffset: 4438.09130859375px;
+		stroke-dasharray: 4438.09130859375px;
+	}
+}
+
+.svg-elem-3 {
+	animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
