@@ -959,6 +959,11 @@ footer .footer-left ul li a {
   display: grid;
   place-content: center;
 }
+.skills.shown .swiper {
+  transition: 300ms linear;
+  opacity: 1;
+  translate: 0% 0%;
+}
 .skills::before {
   content: "";
   width: 100%;
@@ -975,6 +980,8 @@ footer .footer-left ul li a {
           backdrop-filter: blur(8px);
 }
 .skills .swiper {
+  translate: 0% -10%;
+  opacity: 0;
   width: min(100% - 2rem, 1600px);
   text-align: center;
   padding-block: 50px;
