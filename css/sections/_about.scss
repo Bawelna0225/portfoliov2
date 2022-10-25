@@ -96,6 +96,10 @@
 				transition: 500ms ease-in-out;
 				position: relative;
 				color: currentColor;
+				opacity: 0;
+				translate: 0% -50%;
+				transition: opacity 300ms ease-in-out, translate 300ms ease-in-out;
+				transition-delay: 3000ms;
 				svg {
 					position: absolute;
 					top: 0;
@@ -132,6 +136,42 @@
 						scale: 1 1;
 					}
 				}
+			}
+		}
+		p {
+			opacity: 0;
+			translate: 0% -50%;
+			transition: opacity 300ms ease-in-out, translate 300ms ease-in-out;
+			@for $i from 1 through 4 {
+				&:nth-of-type(#{$i}) {
+					transition-delay: 400ms + 400 * $i;
+				}
+			}
+		}
+		.title {
+			opacity: 0;
+			translate: -50% 0%;
+			transition: opacity 300ms linear, translate 300ms linear;
+			@for $i from 1 through 5 {
+				&:nth-of-type(#{$i}) {
+					transition-delay: 100ms + 500 * $i;
+				}
+			}
+		}
+	}
+	&.shown {
+		.container {
+			p {
+				opacity: 1;
+				translate: 0% 0%;
+			}
+			.title {
+				opacity: 1;
+				translate: 0% 0%;
+			}
+			a {
+				opacity: 1;
+				translate: 0% 0%;
 			}
 		}
 	}
