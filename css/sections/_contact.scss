@@ -136,7 +136,7 @@
 			}
 			.form-input {
 				position: relative;
-				
+
 				input,
 				textarea {
 					padding: 15px;
@@ -292,6 +292,27 @@
 					translate: 0% 50%;
 				}
 			}
+		}
+		form {
+			translate: -50% 0%;
+			opacity: 0;
+			transition: 300ms linear;
+		}
+		.right-panel {
+			translate: 50% 0%;
+			opacity: 0;
+			transition: 300ms linear;
+			transition-delay: 500ms;
+		}
+	}
+	&.shown {
+		form {
+			translate: 0% 0%;
+			opacity: 1;
+		}
+		.right-panel {
+			translate: 0% 0%;
+			opacity: 1;
 		}
 	}
 }

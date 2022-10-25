@@ -51,6 +51,7 @@ body {
 section {
   min-height: 100vh;
   padding-block: 40px;
+  overflow-x: hidden;
 }
 
 #cursor {
@@ -1423,6 +1424,25 @@ footer .footer-left ul li a {
   background-color: var(--primary-color);
   top: -40%;
   translate: 0% 50%;
+}
+.contact .container form {
+  translate: -50% 0%;
+  opacity: 0;
+  transition: 300ms linear;
+}
+.contact .container .right-panel {
+  translate: 50% 0%;
+  opacity: 0;
+  transition: 300ms linear;
+  transition-delay: 500ms;
+}
+.contact.shown form {
+  translate: 0% 0%;
+  opacity: 1;
+}
+.contact.shown .right-panel {
+  translate: 0% 0%;
+  opacity: 1;
 }
 
 @-webkit-keyframes rotate-left {

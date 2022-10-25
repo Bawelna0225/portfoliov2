@@ -27,6 +27,7 @@ body {
 section {
 	min-height: 100vh;
 	padding-block: 40px;
+	overflow-x: hidden;
 }
 #cursor {
 	position: fixed;
