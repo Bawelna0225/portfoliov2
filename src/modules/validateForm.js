@@ -49,7 +49,7 @@ export const validateForm = () => {
 	if (!errorFlag) {
 		var data = new FormData(document.querySelector('form'))
 		var xhr = new XMLHttpRequest()
-		xhr.open('POST', 'sendmail.php')
+		xhr.open('POST', './sendmail.php')
 		xhr.onload = function () {
 			console.log(this.response)
 		}
