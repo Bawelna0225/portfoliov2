@@ -12,6 +12,12 @@ body {
 	padding-block: 50px;
 	background-color: var(--primary-color);
 }
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--accent-color);
+}
 .transition {
 	position: fixed;
 	top: 0;
@@ -46,7 +52,7 @@ button {
 	font-weight: 600;
 	a {
 		text-decoration: none;
-		color: var(--elem-color);
+		color: white;
 	}
 	&:hover {
 		filter: brightness(0.8);

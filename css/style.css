@@ -121,6 +121,42 @@ section {
   top: auto;
 }
 
+.transition {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 200;
+  transform: translateY(100%);
+  transition: 300ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.transition.active {
+  opacity: 1;
+  transition: transform 300ms linear;
+  transform: translateY(0%);
+}
+.transition.active path {
+  stroke: var(--accent-color) !important;
+}
+.transition.active .svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+          animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+.transition.active .svg-elem-2 {
+  -webkit-animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+          animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+}
+.transition.active .svg-elem-3 {
+  -webkit-animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+          animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
+
 header {
   position: fixed;
   width: 100vw;
@@ -1606,6 +1642,66 @@ footer .footer-left ul li a {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 1854px;
+    stroke-dasharray: 1854px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1854px;
+  }
+}
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 1854px;
+    stroke-dasharray: 1854px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1854px;
+  }
+}
+@-webkit-keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+@keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+@-webkit-keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.0913085938px;
+  }
+}
+@keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 4438.0913085938px;
+    stroke-dasharray: 4438.0913085938px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.0913085938px;
   }
 }
 @media (min-width: 521px) {

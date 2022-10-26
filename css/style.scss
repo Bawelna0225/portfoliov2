@@ -105,6 +105,43 @@ section {
 		top: auto;
 	}
 }
+.transition {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 200;
+  transform: translateY(100%);
+  transition: 300ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    transition: transform 300ms linear;
+    transform: translateY(0%);
+    path {
+      stroke: var(--accent-color) !important;
+    }
+    .svg-elem-1 {
+      animation: animate-svg-stroke-1 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s
+        both;
+    }
+
+    .svg-elem-2 {
+      animation: animate-svg-stroke-2 4s cubic-bezier(0.47, 0, 0.745, 0.715)
+        0.12s both;
+    }
+
+    .svg-elem-3 {
+      animation: animate-svg-stroke-3 4s cubic-bezier(0.47, 0, 0.745, 0.715)
+        0.24s both;
+    }
+  }
+}
 @import './components/navbar';
 @import './components/preloader';
 @import './components/footer';

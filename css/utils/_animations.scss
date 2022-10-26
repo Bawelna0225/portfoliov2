@@ -93,3 +93,38 @@
     opacity: 1;
   }
 }
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 1854px;
+    stroke-dasharray: 1854px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1854px;
+  }
+}
+
+@keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 4438.09130859375px;
+    stroke-dasharray: 4438.09130859375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.09130859375px;
+  }
+}
+
+@keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 4438.09130859375px;
+    stroke-dasharray: 4438.09130859375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4438.09130859375px;
+  }
+}

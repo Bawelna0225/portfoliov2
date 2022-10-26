@@ -153,3 +153,17 @@ import { observer } from './modules/intersectionObserver'
 copyToClipboardBtn.addEventListener('click', () => {
     copyToClipboard()
 })
+//////////////////////// Page Transition //////////////////////
+
+const anchorToCertificates = document.querySelector('a[href="/pages/timeline/index.html"]');
+anchorToCertificates.onclick = (e) => {
+  e.preventDefault();
+  let target = "pages/timeline/";
+
+  document.querySelector(".transition").classList.add("active");
+
+  setTimeout(() => {
+    window.location.href = target;
+  }, 1500);
+};
+
