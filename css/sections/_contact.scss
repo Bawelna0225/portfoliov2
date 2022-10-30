@@ -298,16 +298,24 @@
 			opacity: 0;
 			transition: 300ms linear;
 		}
+		.contact-divider {
+			opacity: 0;
+			transition: 300ms linear;
+			transition-delay: 450ms;
+		}
 		.right-panel {
 			translate: 50% 0%;
 			opacity: 0;
 			transition: 300ms linear;
-			transition-delay: 500ms;
+			transition-delay: 900ms;
 		}
 	}
 	&.shown {
 		form {
 			translate: 0% 0%;
+			opacity: 1;
+		}
+		.contact-divider {
 			opacity: 1;
 		}
 		.right-panel {

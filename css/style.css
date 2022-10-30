@@ -1460,14 +1460,22 @@ footer .footer-left ul li a {
   opacity: 0;
   transition: 300ms linear;
 }
+.contact .container .contact-divider {
+  opacity: 0;
+  transition: 300ms linear;
+  transition-delay: 450ms;
+}
 .contact .container .right-panel {
   translate: 50% 0%;
   opacity: 0;
   transition: 300ms linear;
-  transition-delay: 500ms;
+  transition-delay: 900ms;
 }
 .contact.shown form {
   translate: 0% 0%;
+  opacity: 1;
+}
+.contact.shown .contact-divider {
   opacity: 1;
 }
 .contact.shown .right-panel {
