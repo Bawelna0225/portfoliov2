@@ -6,9 +6,9 @@
 		--accent-color2: #0c4357;
 		--text-color: #f9f9f9;
 		--shadow-color: #01020ea1;
-		--card-border-color: rgba(255, 255, 255, 0.1);
-		--light-color: rgba(255, 255, 255, 0.06);
-		--hover-border-color: rgba(255, 255, 255, 0.4);
+		--card-border-color: #ffffff1a;
+		--light-color: #ffffff0f;
+		--hover-border-color: #ffffff66;
 	}
 }
 @media (prefers-color-scheme: light) {
@@ -19,8 +19,8 @@
 		--accent-color2: #0c4357;
 		--text-color: #000000;
 		--shadow-color: #01020e32;
-		--card-border-color: rgba(205, 205, 205, 0.21);
-		--light-color: rgba(33, 33, 33, 0.06);
-		--hover-border-color: rgba(42, 42, 42, 0.4);
+		--card-border-color: #cdcdcd36;
+		--light-color: #2121210f;
+		--hover-border-color: #2a2a2a66;
 	}
 }
