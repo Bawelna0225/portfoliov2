@@ -6,3 +6,6 @@ root.style.setProperty('--text-color', localStorage.getItem('currentTheme-textCo
 root.style.setProperty('--shadow-color', localStorage.getItem('currentTheme-shadowColor'))
 root.style.setProperty('--accent-color', localStorage.getItem('currentTheme-firstAccentColor'))
 root.style.setProperty('--accent-color2', localStorage.getItem('currentTheme-secondAccentColor'))
+root.style.setProperty('--card-border-color', localStorage.getItem('currentTheme-cardBorderColor'))
+root.style.setProperty('--light-color', localStorage.getItem('currentTheme-lightColor'))
+root.style.setProperty('--hover-border-color', localStorage.getItem('currentTheme-hoverBorderColor'))

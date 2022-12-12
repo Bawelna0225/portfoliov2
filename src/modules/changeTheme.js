@@ -14,7 +14,7 @@ export const changeTheme = (theme, e) => {
 				const {
 					name,
 					id,
-					colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor },
+					colors: { navbarColor, primaryColor, textColor, shadowColor, firstAccentColor, secondAccentColor, cardBorderColor, lightColor, hoverBorderColor},
 				} = data
 				if (id === theme) {
 					root.style.setProperty('--navbar-color', navbarColor)
@@ -23,6 +23,9 @@ export const changeTheme = (theme, e) => {
 					root.style.setProperty('--shadow-color', shadowColor)
 					root.style.setProperty('--accent-color', firstAccentColor)
 					root.style.setProperty('--accent-color2', secondAccentColor)
+					root.style.setProperty('--card-border-color', cardBorderColor)
+					root.style.setProperty('--light-color', lightColor)
+					root.style.setProperty('--hover-border-color', hoverBorderColor)
 
 					localStorage.setItem('currentTheme-id', id)
 					localStorage.setItem('currentTheme-navbarColor', navbarColor)
@@ -31,6 +34,9 @@ export const changeTheme = (theme, e) => {
 					localStorage.setItem('currentTheme-shadowColor', shadowColor)
 					localStorage.setItem('currentTheme-firstAccentColor', firstAccentColor)
 					localStorage.setItem('currentTheme-secondAccentColor', secondAccentColor)
+					localStorage.setItem('currentTheme-cardBorderColor', cardBorderColor)
+					localStorage.setItem('currentTheme-lightColor', lightColor)
+					localStorage.setItem('currentTheme-hoverBorderColor', hoverBorderColor)
 
 					clearInterval(snackBarInterval)
 					snackBar.textContent = `Theme Changed to: ${name}`
