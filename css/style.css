@@ -1024,58 +1024,47 @@ footer .footer-left ul li a {
   padding-block: 50px;
   padding-inline: 15px;
 }
-.skills .swiper .swiper-button-prev, .skills .swiper .swiper-button-next {
+.skills .swiper .swiper-button-prev,
+.skills .swiper .swiper-button-next {
   color: var(--accent-color);
 }
 .skills .swiper .swiper-slide {
   width: min(100% - 2rem, 350px);
   height: 450px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  transition: 0.5s linear;
-  position: relative !important;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px var(--shadow-color);
-  background-color: var(--navbar-color);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  overflow: hidden;
 }
 .skills .swiper .swiper-slide img {
   height: 300px;
   margin: 0 auto;
+  margin-top: 30px;
   inline-size: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   filter: grayscale(100%);
+  opacity: 0.7;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 300ms linear;
 }
 .skills .swiper .swiper-slide .description {
   padding-top: 30px;
   width: 100%;
-  height: 100px;
+  margin-bottom: 30px;
   text-align: center;
-  background-color: var(--navbar-color);
-  border-radius: 12px;
+  font-size: 1.1rem;
   position: absolute;
+  right: 0;
   bottom: 0px;
-  translate: 0px 100%;
   transition: 300ms linear;
+  opacity: 0;
 }
 .skills .swiper .swiper-slide:hover img {
-  transition: 250ms linear;
   filter: grayscale(0%);
+  opacity: 1;
 }
 .skills .swiper .swiper-slide:hover .description {
-  bottom: 0;
-  transition: 300ms linear;
-  translate: 0px 0%;
+  opacity: 1;
 }
 .skills .swiper .swiper-pagination .swiper-pagination-bullet {
   background-color: var(--accent-color);

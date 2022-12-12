@@ -166,4 +166,3 @@ anchorToCertificates.onclick = (e) => {
     window.location.href = target;
   }, 1500);
 };
-
