@@ -77,9 +77,54 @@
 		.swiper-button-next {
 			color: var(--accent-color);
 		}
+		.swiper-wrapper {
+			&:hover > .swiper-slide::after {
+				opacity: 1;
+			}
+		}
 		.swiper-slide {
 			width: min(calc(100% - 2rem), 350px);
 			height: 450px;
+			background-color: var(--card-border-color);
+			place-self: center;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			&:hover::before {
+				opacity: 1;
+			}
+			&::before,
+			&::after {
+				border-radius: inherit;
+				content: '';
+				height: 100%;
+				left: 0px;
+				opacity: 0;
+				position: absolute;
+				top: 0px;
+				transition: opacity 500ms;
+				width: 100%;
+			}
+			&::before {
+				background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--light-color), transparent 40%);
+				z-index: 3;
+			}
+			&::after {
+				background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), var(--hover-border-color), transparent 40%);
+				z-index: 1;
+			}
+			.content {
+				background-color: var(--card-color);
+				background-color: var(--primary-color);
+				border-radius: inherit;
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				inset: 1px;
+				padding: 10px;
+				position: absolute;
+				z-index: 2;
+			}
 			img {
 				height: 300px;
 				margin: 0 auto;

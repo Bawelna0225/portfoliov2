@@ -8,6 +8,9 @@
     --accent-color2: #0c4357;
     --text-color: #f9f9f9;
     --shadow-color: #01020ea1;
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --light-color: rgba(255, 255, 255, 0.06);
+    --hover-border-color: rgba(255, 255, 255, 0.4);
   }
 }
 @media (prefers-color-scheme: light) {
@@ -1028,9 +1031,51 @@ footer .footer-left ul li a {
 .skills .swiper .swiper-button-next {
   color: var(--accent-color);
 }
+.skills .swiper .swiper-wrapper:hover > .swiper-slide::after {
+  opacity: 1;
+}
 .skills .swiper .swiper-slide {
   width: min(100% - 2rem, 350px);
   height: 450px;
+  background-color: var(--card-border-color);
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.skills .swiper .swiper-slide:hover::before {
+  opacity: 1;
+}
+.skills .swiper .swiper-slide::before, .skills .swiper .swiper-slide::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+.skills .swiper .swiper-slide::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--light-color), transparent 40%);
+  z-index: 3;
+}
+.skills .swiper .swiper-slide::after {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), var(--hover-border-color), transparent 40%);
+  z-index: 1;
+}
+.skills .swiper .swiper-slide .content {
+  background-color: var(--card-color);
+  background-color: var(--primary-color);
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  inset: 1px;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
 }
 .skills .swiper .swiper-slide img {
   height: 300px;
