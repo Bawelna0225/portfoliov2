@@ -866,16 +866,6 @@ footer .footer-left ul li a {
 }
 .work .project.active {
   display: flex;
-  opacity: 1;
-  transform: translateX(0%);
-}
-.work .project.active .description {
-  -webkit-animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-          animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-.work .project.active .preview {
-  -webkit-animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-          animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .work .project ul {
   list-style: none;
@@ -895,7 +885,6 @@ footer .footer-left ul li a {
   box-shadow: 0px 0px 10px var(--accent-color);
   -webkit-backdrop-filter: blur(8px) !important;
           backdrop-filter: blur(8px) !important;
-  translate: 0% -40%;
   opacity: 0 !important;
 }
 .work .project .description svg {
@@ -946,7 +935,6 @@ footer .footer-left ul li a {
   position: relative;
   box-shadow: 0px 0px 5px var(--shadow-color);
   transition: 300ms linear;
-  translate: 0% -20%;
   opacity: 0 !important;
 }
 .work .project .preview img {
