@@ -144,7 +144,7 @@
 			transition: opacity 300ms ease-in-out, translate 300ms ease-in-out;
 			@for $i from 2 through 4 {
 				&:nth-of-type(#{$i}) {
-					transition-delay: 100ms + 250ms * $i;
+					transition-delay: 150ms + 300ms * ($i - 1);
 				}
 			}
 		}
@@ -154,7 +154,7 @@
 			transition: opacity 300ms linear, translate 300ms linear;
 			@for $i from 2 through 5 {
 				&:nth-of-type(#{$i}) {
-					transition-delay: 250ms * $i;
+					transition-delay: 350ms * ($i - 1);
 				}
 			}
 		}

@@ -1218,13 +1218,13 @@ footer .footer-left ul li a {
   transition: opacity 300ms ease-in-out, translate 300ms ease-in-out;
 }
 .about .container p:nth-of-type(2) {
-  transition-delay: 600ms;
+  transition-delay: 450ms;
 }
 .about .container p:nth-of-type(3) {
-  transition-delay: 850ms;
+  transition-delay: 750ms;
 }
 .about .container p:nth-of-type(4) {
-  transition-delay: 1100ms;
+  transition-delay: 1050ms;
 }
 .about .container .title {
   opacity: 0;
@@ -1232,16 +1232,16 @@ footer .footer-left ul li a {
   transition: opacity 300ms linear, translate 300ms linear;
 }
 .about .container .title:nth-of-type(2) {
-  transition-delay: 500ms;
+  transition-delay: 350ms;
 }
 .about .container .title:nth-of-type(3) {
-  transition-delay: 750ms;
+  transition-delay: 700ms;
 }
 .about .container .title:nth-of-type(4) {
-  transition-delay: 1000ms;
+  transition-delay: 1050ms;
 }
 .about .container .title:nth-of-type(5) {
-  transition-delay: 1250ms;
+  transition-delay: 1400ms;
 }
 .about.shown .container p {
   opacity: 1;
